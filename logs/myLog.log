@@ -1,0 +1,60 @@
+[INFO ]2023-07-23 16:49:37.002 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:38.841 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:49:38.873 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:38.877 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:39.231 [main]RestUtils-All required details send for batch  
+[INFO ]2023-07-23 16:49:39.232 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:39.234 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:39.477 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:49:39.479 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:39.480 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:39.876 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:49:39.877 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:39.880 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:40.242 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:49:40.243 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:40.244 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:40.438 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:49:40.441 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:40.445 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:40.646 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:49:40.649 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:40.651 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:40.903 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:49:40.906 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:40.907 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:41.123 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:49:41.126 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:49:41.127 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:49:41.340 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:49:41.342 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:00.226 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:02.068 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:50:02.098 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:02.104 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:02.441 [main]RestUtils-All required details send for batch  
+[INFO ]2023-07-23 16:50:02.442 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:02.445 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:02.703 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:50:02.703 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:02.705 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:03.103 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:50:03.105 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:03.106 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:03.473 [main]RestUtils-All required details send  
+[INFO ]2023-07-23 16:50:03.474 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:03.475 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:03.697 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:50:03.700 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:03.704 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:03.909 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:50:03.911 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:03.913 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:04.121 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:50:04.132 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:04.134 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:04.332 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:50:04.334 [main]RestUtils-User get response
+[INFO ]2023-07-23 16:50:04.335 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-23 16:50:04.542 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-23 16:50:04.544 [main]RestUtils-User get response
