@@ -58,3 +58,129 @@
 [INFO ]2023-07-23 16:50:04.335 [main]RestUtils-user sends request with BaseURL
 [INFO ]2023-07-23 16:50:04.542 [main]RestUtils-DELETE Request successful: 200
 [INFO ]2023-07-23 16:50:04.544 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:45.425 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:47.526 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:47.546 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:47.599 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:47.952 [main]RestUtils-All required details send for batch  
+[INFO ]2023-07-25 10:08:47.956 [main]RestUtils-Request failed
+[ERROR]2023-07-25 10:08:47.956 [main]RestUtils-Not Found: 404
+[INFO ]2023-07-25 10:08:47.956 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:47.965 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:48.239 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:48.240 [main]RestUtils-Request failed
+[ERROR]2023-07-25 10:08:48.240 [main]RestUtils-Not Found: 404
+[INFO ]2023-07-25 10:08:48.240 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:48.250 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:48.542 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:48.543 [main]RestUtils-Request failed
+[ERROR]2023-07-25 10:08:48.544 [main]RestUtils-Not Found: 404
+[INFO ]2023-07-25 10:08:48.544 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:48.551 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:49.154 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:49.155 [main]RestUtils-Request failed
+[ERROR]2023-07-25 10:08:49.155 [main]RestUtils-Not Found: 404
+[INFO ]2023-07-25 10:08:49.155 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:49.163 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:49.487 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:49.524 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:49.893 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:49.902 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:49.919 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:50.316 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:50.330 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:50.573 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:08:50.583 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:08:50.583 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:50.589 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:51.460 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:51.474 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:57.159 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:08:57.163 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:08:57.163 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:57.169 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:57.546 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:57.547 [main]RestUtils-Request failed
+[ERROR]2023-07-25 10:08:57.547 [main]RestUtils-Not Found: 404
+[INFO ]2023-07-25 10:08:57.547 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:57.558 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:57.856 [main]RestUtils-All required details send  
+[INFO ]2023-07-25 10:08:57.863 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:57.867 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:58.118 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:08:58.140 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:58.150 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:58.410 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:08:58.415 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:58.425 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:58.638 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:08:58.641 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:58.648 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:58.975 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:08:58.994 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:59.417 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:08:59.420 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:08:59.426 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:08:59.777 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:08:59.781 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:08:59.781 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:08:59.786 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:00.127 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:09:00.133 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:00.151 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:00.455 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:09:00.459 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:00.466 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:00.769 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:00.781 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:00.975 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:00.985 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:00.994 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:01.440 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:01.446 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:01.451 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:01.685 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:01.687 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:01.696 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:02.015 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:02.020 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:02.030 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:02.255 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:02.262 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:09:02.263 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:09:02.273 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:02.492 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:02.500 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:09:02.500 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:09:02.506 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:02.759 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:02.761 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:09:02.761 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:09:02.771 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:02.976 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:02.980 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:09:02.981 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:09:02.991 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:03.268 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:03.274 [main]RestUtils-Program is created susseccfully
+[INFO ]2023-07-25 10:09:03.274 [main]RestUtils-Program Created Successfully
+[INFO ]2023-07-25 10:09:03.284 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:03.716 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:09:03.720 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:03.731 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:03.961 [main]RestUtils-All required details send  api.payload.AssignmentSubmitPayload@6003eb60
+[INFO ]2023-07-25 10:09:03.963 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:03.973 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:04.199 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:04.209 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:04.488 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:04.492 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:04.498 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:04.717 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:04.723 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:04.730 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:04.972 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:04.975 [main]RestUtils-User get response
+[INFO ]2023-07-25 10:09:04.984 [main]RestUtils-user sends request with BaseURL
+[INFO ]2023-07-25 10:09:05.306 [main]RestUtils-DELETE Request successful: 200
+[INFO ]2023-07-25 10:09:05.318 [main]RestUtils-User get response

@@ -1,0 +1,21 @@
+HTTP/1.1 201 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 25 Jul 2023 14:08:47 GMT
+Via: 1.1 vegur
+
+{
+    "programId": 13688,
+    "programName": "Jul23-APIValidators-SDET-166",
+    "programDescription": "Learn API",
+    "programStatus": "Active",
+    "creationTime": "2023-07-25T14:08:47.682+00:00",
+    "lastModTime": "2023-07-25T14:08:47.682+00:00"
+}
+tors-SDET-166",
+    "programDescription": "Learn API",
+    "programStatus": "Active",
+    "programId": null
+}

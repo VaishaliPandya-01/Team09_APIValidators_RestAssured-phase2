@@ -20,14 +20,23 @@ public class UserRequest extends RestUtils{
 
 		return response;
 	}
-	
-	//Delete Request
-			public static Response DeletRequest() {
 
-				response = when().
-						delete(routes.getString("User_Delete_URL")+UserPayload.getUserId());
+	//Delete Student user Request
+	public static Response DeletStudentRequest() {
 
-				return response;
-			}
+		response = when().
+				delete(routes.getString("User_Delete_URL")+StudentUser);
+
+		return response;
+	}
+
+	//Delete Admin user Request
+	public static Response DeletAdminRequest() {
+
+		response = when().
+				delete(routes.getString("User_Delete_URL")+AdminUser);
+
+		return response;
+	}
 
 }
