@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "submissionId": {
+        "type": "number"
+      },
+      "assignmentId": {
+        "type": "number"
+      },
+      "userId": {
+        "type": "string"
+      },
+      "subDesc": {
+        "type": "string"
+      },
+      "subComments": {
+        "type": "string"
+      },
+      "subPathAttach1": {
+        "type": "string"
+      },
+      "subPathAttach2": {
+        "type": "string"
+      },
+      "subPathAttach3": {
+        "type": "string"
+      },
+      "subPathAttach4": {
+        "type": "string"
+      },
+      "subPathAttach5": {
+        "type": "string"
+      },
+      "subDateTime": {
+        "type": "string"
+      },
+      "gradedBy": {},
+      "gradedDateTime": {},
+      "grade": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "submissionId",
+      "assignmentId",
+      "userId",
+      "subDesc",
+      "subComments",
+      "subPathAttach1",
+      "subPathAttach2",
+      "subPathAttach3",
+      "subPathAttach4",
+      "subPathAttach5",
+      "subDateTime",
+      "gradedBy",
+      "gradedDateTime",
+      "grade"
+    ]
+  }
+}

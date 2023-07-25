@@ -3,8 +3,14 @@ package api.request;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import api.payload.AssignmentSubmitPayload;
 import api.utilities.RestUtils;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -15,9 +21,13 @@ public class AssignmentSubmitRequest extends RestUtils{
 	public static Response PostRequest(AssignmentSubmitPayload payload) {
 
 		try {
+
+			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentSubmitPostLog.txt"));
 			response = given().
 					contentType(ContentType.JSON).
 					body(payload).
+					filter(RequestLoggingFilter.logRequestTo(logs)).
+					filter(ResponseLoggingFilter.logResponseTo(logs)).
 					when().post(routes.getString("AssignmentSubmit_Post_URL"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -26,6 +36,7 @@ public class AssignmentSubmitRequest extends RestUtils{
 		return response;
 	}
 
+
 	//Get All Request
 	public static Response GetAllRequest() {
 
@@ -33,6 +44,7 @@ public class AssignmentSubmitRequest extends RestUtils{
 
 		return response;
 	}
+
 
 	//Get Assignment Submitted by user ID Request
 	public static Response GetAssignmentByUserIDRequest() {
@@ -50,6 +62,7 @@ public class AssignmentSubmitRequest extends RestUtils{
 		return response;
 	}
 
+
 	//Get Grade by Student ID Request
 	public static Response GetGradeByStudentIDRequest() {
 
@@ -58,6 +71,7 @@ public class AssignmentSubmitRequest extends RestUtils{
 		return response;
 	}
 
+
 	//Get Grade By Assignment ID Request
 	public static Response GetGradeByAssignIDRequest() {
 
@@ -65,36 +79,58 @@ public class AssignmentSubmitRequest extends RestUtils{
 
 		return response;
 	}
-	
+
+
 	//Get Grade By Batch ID Request
-		public static Response GetGradeByBatchIDRequest() {
+	public static Response GetGradeByBatchIDRequest() {
 
-			response = given().when().get(routes.getString("AssignmentSubmit_GetGradeBatchID_URL")+BatchPayload.getBatchId());
-
-			return response;
-		}
-
-	//Put Resubmit Assignment by submission ID Request
-	public static Response ResubmitAssignPutRequest(AssignmentSubmitPayload payload) {
-
-		response = given().
-				contentType(ContentType.JSON).
-				accept(ContentType.JSON).
-				body(payload).
-				when().put(routes.getString("AssignmentSubmit_PutResubmit_URL")+AssignmentSubmitPayload.getSubmissionId());
+		response = given().when().get(routes.getString("AssignmentSubmit_GetGradeBatchID_URL")+BatchPayload.getBatchId());
 
 		return response;
 	}
 
+
+	//Put Resubmit Assignment by submission ID Request
+	public static Response ResubmitAssignPutRequest(AssignmentSubmitPayload payload) {
+
+
+		try {
+
+			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentSubmitPutLog.txt"));
+			response = given().
+					contentType(ContentType.JSON).
+					accept(ContentType.JSON).
+					body(payload).
+					filter(RequestLoggingFilter.logRequestTo(logs)).
+					filter(ResponseLoggingFilter.logResponseTo(logs)).
+					when().put(routes.getString("AssignmentSubmit_PutResubmit_URL")+AssignmentSubmitPayload.getSubmissionId());
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return response;
+	}
+
+	
 	//Put Grade by submission ID Request
 	public static Response GradePutRequest(AssignmentSubmitPayload payload) {
 
-		response = given().
-				contentType(ContentType.JSON).
-				accept(ContentType.JSON).
-				body(payload).
-				when().put(routes.getString("AssignmentSubmit_PutByGrade_URL")+AssignmentSubmitPayload.getSubmissionId());
+		try {
 
+			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentSubGradePutLog.txt"));
+			response = given().
+					contentType(ContentType.JSON).
+					accept(ContentType.JSON).
+					body(payload).
+					filter(RequestLoggingFilter.logRequestTo(logs)).
+					filter(ResponseLoggingFilter.logResponseTo(logs)).
+					when().put(routes.getString("AssignmentSubmit_PutByGrade_URL")+AssignmentSubmitPayload.getSubmissionId());
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return response;
 	}
 

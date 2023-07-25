@@ -37,14 +37,6 @@ public static AssignmentPayload PutBodyPostDueDate() throws IOException {
 		AssignmentPayload.setCreatedBy(AdminUser);
 		AssignmentPayload.setDueDate(xlutils.getCellData("Assignmentputdata", 1, 3));//2023-07-29T22:00:04.964+00:00
 		AssignmentPayload.setGraderId(AdminUser);
-		
-		System.out.println("My data ====================>" +AssignmentPayload.getAssignmentDescription());
-		System.out.println("My data ====================>" +AssignmentPayload.getAssignmentName());
-		System.out.println("My data ====================>" +BatchPayload.getBatchId());
-		System.out.println("My data ====================>" +AssignmentPayload.getComments());
-		System.out.println("My data ====================>" +AdminUser);
-		System.out.println("My data ====================>" +AssignmentPayload.getDueDate());
-
 
 		return AssignmentPayload;
 

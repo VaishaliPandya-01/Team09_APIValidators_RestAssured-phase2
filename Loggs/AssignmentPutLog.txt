@@ -1,0 +1,50 @@
+Request method:	PUT
+Request URI:	https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/assignments/4055
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "assignmentDescription": "SQL Bootcamp Assignment",
+    "assignmentId": 4055,
+    "assignmentName": "Jul23-APIValidators-SDET-039SDET-SQL-71",
+    "batchId": 7964,
+    "comments": "Creating Assignment",
+    "createdBy": "U9569",
+    "dueDate": "2023-06-20T21:00:09.853+00:00",
+    "graderId": "U9569",
+    "pathAttachment1": "pathfile1.json",
+    "pathAttachment2": "pathfile2.json",
+    "pathAttachment3": "pathfile3.json",
+    "pathAttachment4": "pathfile4.json",
+    "pathAttachment5": "pathfile5.json"
+}
+HTTP/1.1 200 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 25 Jul 2023 21:33:21 GMT
+Via: 1.1 vegur
+
+{
+    "assignmentId": 4055,
+    "assignmentName": "Jul23-APIValidators-SDET-039SDET-SQL-71",
+    "assignmentDescription": "SQL Bootcamp Assignment",
+    "comments": "Creating Assignment",
+    "dueDate": "2023-06-20T21:00:09.853+00:00",
+    "pathAttachment1": "pathfile1.json",
+    "pathAttachment2": "pathfile2.json",
+    "pathAttachment3": "pathfile3.json",
+    "pathAttachment4": "pathfile4.json",
+    "pathAttachment5": "pathfile5.json",
+    "batchId": 7964,
+    "createdBy": "U9569",
+    "graderId": "U9569"
+}

@@ -22,11 +22,19 @@ public class XLUtils {
 	public XSSFCell cell;
 	public CellStyle style;   
 	String path;
+	public File jsonFile;
 	
 	 public XLUtils(String path)
 	{
 		this.path=path;
 	}
+	 
+	 public File getJSONFile (String jsonPath)
+	 {
+		 jsonFile= new File(jsonPath);	
+		 
+		 return jsonFile;
+	 }
 	 
 	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
 	{

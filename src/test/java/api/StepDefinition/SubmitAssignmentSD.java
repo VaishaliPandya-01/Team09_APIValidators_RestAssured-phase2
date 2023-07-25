@@ -1,6 +1,8 @@
 package api.StepDefinition;
 
 import static io.restassured.RestAssured.baseURI;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 
@@ -21,14 +23,16 @@ import io.cucumber.java.en.When;
 
 public class SubmitAssignmentSD extends RestUtils{
 
-	//baseURL
+
+	//BaseURL
 	@Given("User creates request for the LMS API endpoint")
 	public void User_creates_request_for_the_LMS_API_endpoint() {
 
 		String BaseURI = routes.getString("BaseUrl");
 		baseURI = BaseURI;
-		log.info("user sends request with BaseURL");
+		log.info("***User sends request with BaseURL***");
 	}
+
 
 	//CreateNewProgram
 	@When("User sends HTTPS Request and  request Body for Program with mandatory ,additional fields")
@@ -37,9 +41,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		ProgramPayload=ProgramBody.PostBody();
 		response = ProgramRequests.PostRequest(ProgramPayload);		
 		ProgramPayload.setProgramId(response.path("programId"));		
-		log.info("All required details send  ");
-
+		log.info("******Create Program****** ");
 	}
+
 
 	//CreateNewBatch
 	@When("User sends HTTPS Request and  request Body for Batch with mandatory ,additional fields")
@@ -48,8 +52,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		BatchPayload = BatchBody.PostBody();
 		response = BatchRequests.PostRequest(BatchPayload);		
 		BatchPayload.setBatchId(response.path("batchId"));
-		log.info("All required details send for batch  " );
+		log.info("******Create Batch******" );
 	}
+
 
 	//CreateNewAdminUser
 	@When("User sends HTTPS Request and request Body for Admin User with mandatory ,additional fields")
@@ -58,8 +63,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		UserPayload = UserBody.AdminPostBody();
 		response = UserRequest.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
-		log.info("All required details send  ");
+		log.info("******Created Admin User******");
 	}
+
 
 	//CreateNewStudentUser
 	@When("User sends HTTPS Request and request Body for Student User with mandatory ,additional fields")
@@ -68,7 +74,7 @@ public class SubmitAssignmentSD extends RestUtils{
 		UserPayload = UserBody.StudentPostBody();
 		response = UserRequest.PostRequest(UserPayload);
 		StudentUser=response.path("userId");
-		log.info("All required details send  ");
+		log.info("******Created Student User******");
 	}
 
 
@@ -79,7 +85,7 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentPayload = AssignmentBody.PostBody();
 		response = AssignmentRequest.PostRequest(AssignmentPayload);
 		AssignmentPayload.setAssignmentId(response.path("assignmentId"));
-		log.info("All required details send  ");
+		log.info("******Created Assignment******");
 	}
 
 
@@ -91,8 +97,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 		AssignmentSubmitPayload.setSubmissionId(response.path("submissionId"));
 
-		log.info("All required details send  ");
+		log.info("******Student Submits assignment******");
 	}
+
 
 	//Duplicate Assignment Submit
 	@When("User sends HTTPS Request and request Body for duplicate Assignment submit with mandatory ,additional fields")
@@ -101,7 +108,7 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.PostBody();
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 
-		log.info("All required details send  ");
+		log.info("******Duplcate assignment submit with same values******");
 	}
 
 
@@ -112,8 +119,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.PostBodyForMissingAssignmentID();
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 
-		log.info("All required details send  ");
+		log.info("*****Missing Mandatory field Assignmnet ID for Assignment submit*****");
 	}
+
 
 	//Missing Mandatory fields User ID
 	@When("User sends HTTPS Request and request Body for Assignment submit with missing User ID")
@@ -122,8 +130,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.PostBodyForMissingUserID();
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 
-		log.info("All required details send  ");
+		log.info("*****Missing Mandatory field User ID for Assignment submit*****");
 	}
+
 
 	//Missing Mandatory fields sub Date Time
 	@When("User sends HTTPS Request and request Body for Assignment submit with missing sub Date Time")
@@ -133,8 +142,9 @@ public class SubmitAssignmentSD extends RestUtils{
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 		AssignmentSubmitPayload.setSubmissionId(response.path("submissionId"));
 
-		log.info("All required details send  ");
+		log.info("*****Missing Mandatory field sub Date Time for Assignment submit*****");
 	}
+
 
 	//Missing Mandatory fields Submission description
 	@When("User sends HTTPS Request and request Body for Assignment submit with missing Submission description")
@@ -144,18 +154,32 @@ public class SubmitAssignmentSD extends RestUtils{
 		response = AssignmentSubmitRequest.PostRequest(AssignmentSubmitPayload);
 		AssignmentSubmitPayload.setSubmissionId(response.path("submissionId"));
 
-		log.info("All required details send  ");
+		log.info("*****Missing Mandatory field Submission description for Assignment submit*****");
 	}
 
-	//Resubmit Assignment by submission ID By Same Student
+
+	//Resubmit Assignment by submission ID By Student
 	@When("User sends Put HTTPS Request and request Body for Assignment Submit with mandatory fields")
 	public void User_sends_Put_HTTPS_Request_and_request_Body_for_Assignment_Submit_with_mandatory_fields() throws IOException {
 
 		AssignmentSubmitPayload = AssignmentSubmitBody.ResubmitPutBody();
 		response = AssignmentSubmitRequest.ResubmitAssignPutRequest(AssignmentSubmitPayload);
 
-		log.info("All required details send  " +AssignmentSubmitPayload );
+		log.info("******Resubmit Assignment by submission ID By Student******");
 	}
+
+
+
+	//Resubmit Assignment by invalid submission ID
+	@When("User sends Put HTTPS Request and request Body for Assignment Submit with invalid submission ID")
+	public void User_sends_Put_HTTPS_Request_and_request_Body_for_Assignment_Submit_with_invalid_submission_ID() throws IOException {
+
+		AssignmentSubmitPayload = AssignmentSubmitBody.ResubmitPutBody();
+		response = AssignmentSubmitRequest.ResubmitAssignPutRequest(AssignmentSubmitPayload);
+
+		log.info("******Resubmit Assignment by Invalid submission ID By Student******");
+	}
+
 
 	//Resubmit Assignment by submission ID without mandatory fields
 	@When("User sends Put HTTPS Request and request Body for Assignment Submit without mandatory fields")
@@ -164,8 +188,10 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.ResubmitWithoutManFieldsPutBody();
 		response = AssignmentSubmitRequest.ResubmitAssignPutRequest(AssignmentSubmitPayload);
 
-		log.info("All required details send  " +AssignmentSubmitPayload );
+		log.info("******Resubmit Assignment by submission ID without mandatory fields******");
 	}
+
+
 
 	//Update Assignment Due Date By Admin
 	@When("User sends put HTTPS Request and request Body for updating date in Assignment")
@@ -173,8 +199,10 @@ public class SubmitAssignmentSD extends RestUtils{
 
 		AssignmentPayload = AssignmentBody.PutBodyPostDueDate();
 		response = AssignmentRequest.PutRequest(AssignmentPayload);
-		log.info("All required details send  " +AssignmentSubmitPayload );
+		log.info("******Update Assignment Due Date By Admin******");
 	}
+
+
 
 	//Update Grade Assignment by SubmissionID
 	@When("User sends Put HTTPS Request and request Body to grade Assignment Submit")
@@ -183,8 +211,21 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.GradePutBody();
 		response = AssignmentSubmitRequest.GradePutRequest(AssignmentSubmitPayload);		
 
-		log.info("All required details send  " +AssignmentSubmitPayload );
+		log.info("******Update Grade Assignment by Submission ID******");
 	}
+
+
+
+	//Update Grade Assignment by Invalid SubmissionID
+	@When("User sends Put HTTPS Request and request Body to grade Assignment Submit with invalid submition ID")
+	public void User_sends_Put_HTTPS_Request_and_request_Body_to_grade_Assignment_Submit_with_invalid_submition_ID() throws IOException {
+
+		AssignmentSubmitPayload = AssignmentSubmitBody.GradePutBody();
+		response = AssignmentSubmitRequest.GradePutRequest(AssignmentSubmitPayload);		
+
+		log.info("******Update Grade Assignment by Invalid Submission ID******");
+	}
+
 
 	//Update Grade Assignment by SubmissionID without mandatory fields
 	@When("User sends Put HTTPS Request and request Body to grade Assignment Submit without mandatory fields")
@@ -193,16 +234,7 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentSubmitPayload = AssignmentSubmitBody.GradePutBodyWithoutMandFields();
 		response = AssignmentSubmitRequest.GradePutRequest(AssignmentSubmitPayload);		
 
-		log.info("All required details send  " +AssignmentSubmitPayload );
-	}
-
-
-	//Delete Assignment Submit
-	@When("User sends HTTPS delete Request for assignment submit")
-	public void User_sends_HTTPS_delete_Request_for_assignment_submit() {
-
-		AssignmentSubmitRequest.DeletRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Update Grade Assignment by SubmissionID without mandatory fields******" );
 	}
 
 	//Get ALL Assignment Submit
@@ -210,23 +242,25 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_creates_GET_Request_for_Assignment_submit() {
 
 		AssignmentSubmitRequest.GetAllRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get ALL Assignment Submit******");
 	}
+
 
 	//Get Assignment Submit by userID
 	@When("User sends Get HTTPS Request for Assignment submit by User ID")
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_by_User_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByUserIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get Assignment Submit by User ID******");
 	}
+
 
 	//Get Assignment Submit by BatchID
 	@When("User sends Get HTTPS Request for Assignment submit by Batch ID")
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_by_Batch_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByBatchIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get Assignment Submit by Batch ID******");
 	}
 
 	//Get Assignment Submit by Invalid userID
@@ -234,15 +268,15 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_with_invalid_User_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByUserIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get Assignment Submit by Invalid User ID******");
 	}
 
-	//Get Assignment Submit by BatchID
+	//Get Assignment Submit by Invalid BatchID
 	@When("User sends Get HTTPS Request for Assignment submit by invalid Batch ID")
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_by_invalid_Batch_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByBatchIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get Assignment Submit by Invalid Batch ID******");
 	}
 
 
@@ -251,23 +285,61 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_assignment_ID() {
 
 		AssignmentSubmitRequest.GetGradeByAssignIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get grade by Assignment ID******");
 	}
+
+
+	//Get grade by Invalid Assignment ID
+	@When("User sends HTTPS Get Request for Assignment submit with invalid assignment ID")
+	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_invalid_assignment_ID() {
+
+		AssignmentSubmitRequest.GetGradeByAssignIDRequest();
+		log.info("******Get grade by Invalid Assignment ID******");
+	}
+
 
 	//Get grade by Student ID
 	@When("User sends HTTPS Get Request for Assignment submit with Student ID")
 	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_Student_ID() {
 
 		AssignmentSubmitRequest.GetGradeByStudentIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get grade by Student ID******");
 	}
+
+
+	//Get grade by Invalid Student ID
+	@When("User sends HTTPS Get Request for Assignment submit with invalid Student ID")
+	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_invalid_Student_ID() {
+
+		AssignmentSubmitRequest.GetGradeByStudentIDRequest();
+		log.info("******Get grade by Invalid Student ID******");
+	}
+
 
 	//Get grade by Batch ID
 	@When("User sends HTTPS Get Request for Assignment submit with Batch ID")
 	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_batch_ID() {
 
 		AssignmentSubmitRequest.GetGradeByBatchIDRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******Get grade by Batch ID******");
+	}
+
+
+	//Get grade by Invalid Batch ID
+	@When("User sends HTTPS Get Request for Assignment submit with invalid Batch ID")
+	public void User_sends_HTTPS_Get_Request_for_Assignment_submit_with_invalid_batch_ID() {
+
+		AssignmentSubmitRequest.GetGradeByBatchIDRequest();
+		log.info("******Get grade by Invalid Batch ID******");
+	}
+
+
+	//Delete Assignment Submit
+	@When("User sends HTTPS delete Request for assignment submit")
+	public void User_sends_HTTPS_delete_Request_for_assignment_submit() {
+
+		AssignmentSubmitRequest.DeletRequest();
+		log.info("******DELETE Request for Assignment Submit******");
 	}
 
 
@@ -276,7 +348,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_delete_Request_for_assignment() {
 
 		AssignmentRequest.DeletRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******DELETE Request for Assignment******");
 	}
 
 
@@ -285,7 +357,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_delete_Request_for_student_user() {
 
 		UserRequest.DeletStudentRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******DELETE Request for Student User******");
 	}
 
 	//Delete Admin User
@@ -293,7 +365,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_delete_Request_for_admin_user() {
 
 		UserRequest.DeletAdminRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("******DELETE Request for Admin User******");
 	}
 
 	//Delete Batch
@@ -301,7 +373,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_delete_Request_for_batch() {
 
 		BatchRequests.DeletRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("****DELETE Request for Batch****");
 	}
 
 	//Delete Program
@@ -309,83 +381,193 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_HTTPS_delete_Request_for_program() {
 
 		ProgramRequests.DeletRequest();
-		log.info("DELETE Request successful: 200");
+		log.info("****DELETE Request for Program****");
 	}
 
 
-	//Validate Status Code and Data
+	//Validate delete message and Status Code 200
 	@Then("Validate response code {int}")
 	public void validate_response_code(Integer statusCode){		
-		
-		if (statusCode == 200) {	
-			
+
+		if (statusCode == 200) {				
+
 			response.then().assertThat()
-			.statusCode(statusCode).log().all().extract().response();
-			
-			log.info("Program is created susseccfully");
+			.statusCode(statusCode)
+			.log().all();	
+
+			log.info("Deleted successfully with status code " + response.getStatusCode());
+			log.info("Deleted successfully message " + response.getBody().asString());
 
 		} else {
 			log.info("Request failed");
 			log.error("Not Found: 404");
 		}
-
-		
-		log.info("Program Created Successfully") ;
 	}
 
 
-	@Then("User receives {int} Created Status with response body")
-	public void user_receives_Created_Status_with_response_body(Integer statusCode) {
+	//Validate Status Code 400  
+	@Then("User receives {int} Status code")
+	public void User_receives_Status_code(Integer statusCode){		
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
+		if (statusCode == 400) {				
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.log().all();	
+
+			log.info("Status code " + response.getStatusCode());
+			log.info("Validation message " + response.getBody().asString());
+
+		} else {
+			log.info("Request failed");
+		}
 	}
 
-	@Then("User receives {int} Ok status with message")
-	public void User_receives_Ok_status_with_message(Integer statusCode) {
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
+	//Validate Program created 201
+	@Then("User receives {int} Created Status with response body for program")
+	public void user_receives_Created_Status_with_response_body_for_program(Integer statusCode) {
+
+
+		if (statusCode == 201) {
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.body(matchesJsonSchema(programjson))
+			.log().all();
+
+			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
+			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
+			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
+
+			log.info("Program created successfully with status code " + response.getStatusCode()) ;
+			log.info("Program Respose body" +response.getBody().asString());
+
+
+		} else {
+			log.info("Request failed");
+			log.error("400 bad Request");
+		}
 	}
 
+	//Validate Assignment Submitted 201
+	@Then("User receives {int} Created Status with response body for assignment submit")
+	public void user_receives_Created_Status_with_response_body_for_assignment_submit(Integer statusCode) {
+
+
+		if (statusCode == 201) {
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.body(matchesJsonSchema(AssignSubmitjson))
+			.log().all();
+
+			assertEquals(AssignmentSubmitPayload.getSubDesc(), response.jsonPath().getString("subDesc"));
+			assertEquals(AssignmentSubmitPayload.getSubComments(), response.jsonPath().getString("subComments"));
+			assertEquals(AssignmentSubmitPayload.getSubPathAttach1(), response.jsonPath().getString("subPathAttach1"));
+			assertEquals(AssignmentSubmitPayload.getSubPathAttach2(), response.jsonPath().getString("subPathAttach2"));
+			assertEquals(AssignmentSubmitPayload.getSubPathAttach3(), response.jsonPath().getString("subPathAttach3"));
+			assertEquals(AssignmentSubmitPayload.getSubPathAttach4(), response.jsonPath().getString("subPathAttach4"));
+			assertEquals(AssignmentSubmitPayload.getSubPathAttach5(), response.jsonPath().getString("subPathAttach5"));
+			assertEquals(AssignmentSubmitPayload.getSubDateTime(), response.jsonPath().getString("subDateTime"));
+			assertEquals(AssignmentSubmitPayload.getUserId(), response.jsonPath().getString("userId"));
+			assertEquals(AssignmentSubmitPayload.getAssignmentId(), response.jsonPath().getString("assignmentId"));
+
+			log.info("Program created successfully with status code " + response.getStatusCode()) ;
+			log.info("Program Respose body" +response.getBody().asString());
+
+
+		} else {
+			log.info("Request failed");
+			log.error("400 bad Request");
+		}
+	}
+
+	//validate batch created 201
+	@Then("User receives {int} Created Status with response body for batch")
+	public void user_receives_Created_Status_with_response_body_for_batch(Integer statusCode) {
+
+
+		if (statusCode == 201) {
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			//.body(matchesJsonSchema(batchjson))
+			.log().all();
+
+			assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
+			assertEquals(BatchPayload.getBatchName(), response.jsonPath().getString("batchName"));
+			assertEquals(BatchPayload.getBatchNoOfClasses(), response.jsonPath().getString("batchNoOfClasses"));
+			assertEquals(BatchPayload.getBatchStatus(), response.jsonPath().getString("batchStatus"));
+			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
+
+			log.info("Batch created successfully with status code " + response.getStatusCode()) ;
+			log.info("Batch Respose body" +response.getBody().asString());		
+
+		} else {
+			log.info("Request failed");
+			log.error("400 bad Request");
+		}
+	}
+
+
+	//validate status code 404
 	@Then("User receives {int} Not Found Status with message")
 	public void User_receives_Not_Found_Status_with_message(Integer statusCode) {
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
+		if (statusCode == 404) {				
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.log().all();	
+
+			log.info("Status code " + response.getStatusCode());
+			log.info("Validation message " + response.getBody().asString());
+
+		} else {
+			log.info("Request failed");
+		}
 	}
 
-	@Then("User receives {int} Bad Request Status with message")
-	public void User_receives_Bad_Request_Status_with_message(Integer statusCode) {
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
-	}
-
+	//Validate status code 200 for get 
 	@Then("User receives {int} OK Status with response body")
 	public void User_receives_OK_Status_with_response_body(Integer statusCode) {
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
+		if (statusCode == 200) {				
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.log().all();	
+
+			log.info("Get request with Status code " + response.getStatusCode());
+			log.info("Values " + response.getBody().asString());
+
+		} else {
+			log.info("Request failed");
+			log.error("Not Found: 404");
+		}
 	}
 
-	@Then("User receives {int} OK Status with updated value in response body")
-	public void User_receives_OK_Status_with_updated_value_in_response_body(Integer statusCode) {
 
-		response.then().assertThat()
-		.statusCode(statusCode)
-		.log().all();
-		log.info("User get response") ;
+	//validate created 201
+	@Then("User receives {int} Created Status with response body")
+	public void user_receives_Created_Status_with_response_body(Integer statusCode) {
+
+		if (statusCode == 201) {
+
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.log().all();
+
+			log.info("Program created successfully with status code " + response.getStatusCode()) ;
+			log.info("Respose body" +response.getBody().asString());
+
+
+		} else {
+			log.info("Request failed");
+			log.error("400 bad Request");
+		}
 	}
 
 }

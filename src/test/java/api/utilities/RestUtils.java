@@ -1,8 +1,6 @@
 package api.utilities;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.File;
 import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
@@ -19,25 +17,24 @@ import io.restassured.response.Response;
 public class RestUtils {
 	
 	public static ResourceBundle routes = ResourceBundle.getBundle("Routes");
+	public static ResourceBundle path = ResourceBundle.getBundle("path");
+	
+	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
+	
+	public static File programjson = xlutils.getJSONFile(path.getString("programjson"));
+	public static File AssignSubmitjson = xlutils.getJSONFile(path.getString("AssignSubmitjson"));
+	
 	public static Logger log = LogManager.getLogger();
-	public static String path =".\\src\\test\\resources\\TestData\\DataExcel.xlsx";
-	public static String jsonPath =".\\src\\test\\resources\\JsonSchema\\programSchema.json";
-	public static XLUtils xlutils=new XLUtils(path);
-	public static Response response;
+	
 	public static ProgramPayload ProgramPayload = new ProgramPayload();
 	public static BatchPayload BatchPayload = new BatchPayload();
 	public static UserPayload UserPayload = new UserPayload();
 	public static UserRoleMap UserRoleMap = new UserRoleMap();
 	public static AssignmentPayload AssignmentPayload = new AssignmentPayload();
 	public static AssignmentSubmitPayload AssignmentSubmitPayload = new AssignmentSubmitPayload();
+	
+	public static Response response;
 	public static String AdminUser;
 	public static String StudentUser;	
 	
-	
-	public static PrintStream Logger() throws FileNotFoundException {	
-	PrintStream logs = new PrintStream(new FileOutputStream("logging.txt"));
-	return logs;
-	}
-	//public static File Batchpostjson = new File(".\\src\\test\\resources\\assignmentSubmit.json");
-
 }
