@@ -1,0 +1,85 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1690237643.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"batchId",
+		"batchName",
+		"batchDescription",
+		"batchStatus",
+		"batchNoOfClasses",
+		"programId",
+		"programName"
+	],
+	"properties": {
+		"batchId": {
+			"$id": "#root/batchId", 
+			"title": "Batchid", 
+			"type": "integer",
+			"examples": [
+				7221
+			],
+			"default": 0
+		},
+		"batchName": {
+			"$id": "#root/batchName", 
+			"title": "Batchname", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Jul23-APIValidators-SDET-5858SDET-303"
+			],
+			"pattern": "^.*$"
+		},
+		"batchDescription": {
+			"$id": "#root/batchDescription", 
+			"title": "Batchdescription", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"SDET"
+			],
+			"pattern": "^.*$"
+		},
+		"batchStatus": {
+			"$id": "#root/batchStatus", 
+			"title": "Batchstatus", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Active"
+			],
+			"pattern": "^.*$"
+		},
+		"batchNoOfClasses": {
+			"$id": "#root/batchNoOfClasses", 
+			"title": "Batchnoofclasses", 
+			"type": "integer",
+			"examples": [
+				2
+			],
+			"default": 0
+		},
+		"programId": {
+			"$id": "#root/programId", 
+			"title": "Programid", 
+			"type": "integer",
+			"examples": [
+				13134
+			],
+			"default": 0
+		},
+		"programName": {
+			"$id": "#root/programName", 
+			"title": "Programname", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"Jul23-APIValidators-SDET-5858"
+			],
+			"pattern": "^.*$"
+		}
+	}
+}
