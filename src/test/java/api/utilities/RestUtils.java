@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 import api.payload.AssignmentPayload;
 import api.payload.AssignmentSubmitPayload;
 import api.payload.BatchPayload;
@@ -21,7 +22,8 @@ public class RestUtils {
 	
 	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
 	
-	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostjson"));
+	public static File programPutjson = xlutils.getJSONFile(path.getString("programPutSchemajson"));
+	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostSchemajson"));
 	public static File AssignSubmitPostjson = xlutils.getJSONFile(path.getString("AssignSubmitPostjson"));
 	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
 	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
@@ -39,5 +41,4 @@ public class RestUtils {
 	public static String AdminUser;
 	public static String StudentUser;	
 	
-
 }
