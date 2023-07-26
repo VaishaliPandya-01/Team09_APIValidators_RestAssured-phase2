@@ -32,13 +32,13 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 1, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 1, 12));
 
 		return UserPayload;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostExtgPhnNumBody() throws IOException {
 
@@ -58,13 +58,13 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 3, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 3, 12));
 
 		return UserPayload;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostMissingFieldsBody() throws IOException {
 
@@ -84,26 +84,26 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 2, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 2, 12));
 
 		return UserPayload;
-		
+
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostAdminBody() throws IOException {
 
 		UserPayload.setUserComments(xlutils.getCellData("userpostdata", 4, 0));
 		UserPayload.setUserEduPg(xlutils.getCellData("userpostdata", 4, 1));
 		UserPayload.setUserEduUg(xlutils.getCellData("userpostdata", 4, 2));
-		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 4, 3)+RandomStringUtils.randomNumeric(3));
+		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 4, 3) + RandomStringUtils.randomNumeric(3));
 		UserPayload.setUserLastName(xlutils.getCellData("userpostdata", 4, 4));
 		UserPayload.setUserLinkedinUrl(xlutils.getCellData("userpostdata", 4, 5));
 		UserPayload.setUserLocation(xlutils.getCellData("userpostdata", 4, 6));
 		UserPayload.setUserMiddleName(xlutils.getCellData("userpostdata", 4, 7));
-		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 4, 8)+RandomStringUtils.randomNumeric(10));
+		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 4, 8) + RandomStringUtils.randomNumeric(10));
 
 		List userRoleMaps = new ArrayList<>();
 		userRoleMaps.add(UserRoleMap);
@@ -111,25 +111,26 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 4, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 4, 12));
 
 		return UserPayload;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostStaffBody() throws IOException {
 
 		UserPayload.setUserComments(xlutils.getCellData("userpostdata", 5, 0));
 		UserPayload.setUserEduPg(xlutils.getCellData("userpostdata", 5, 1));
 		UserPayload.setUserEduUg(xlutils.getCellData("userpostdata", 5, 2));
-		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 5, 3)+RandomStringUtils.randomNumeric(3));
+		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 5, 3) + RandomStringUtils.randomNumeric(3));
 		UserPayload.setUserLastName(xlutils.getCellData("userpostdata", 5, 4));
 		UserPayload.setUserLinkedinUrl(xlutils.getCellData("userpostdata", 5, 5));
 		UserPayload.setUserLocation(xlutils.getCellData("userpostdata", 5, 6));
 		UserPayload.setUserMiddleName(xlutils.getCellData("userpostdata", 5, 7));
-		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 5, 8)+RandomStringUtils.randomNumeric(10));;
+		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 5, 8) + RandomStringUtils.randomNumeric(10));
+		;
 
 		List userRoleMaps = new ArrayList<>();
 		userRoleMaps.add(UserRoleMap);
@@ -137,26 +138,25 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 5, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 5, 12));
 
 		return UserPayload;
 	}
-	
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostStudentBody() throws IOException {
 
 		UserPayload.setUserComments(xlutils.getCellData("userpostdata", 6, 0));
 		UserPayload.setUserEduPg(xlutils.getCellData("userpostdata", 6, 1));
 		UserPayload.setUserEduUg(xlutils.getCellData("userpostdata", 6, 2));
-		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 6, 3)+RandomStringUtils.randomNumeric(3));
+		UserPayload.setUserFirstName(xlutils.getCellData("userpostdata", 6, 3) + RandomStringUtils.randomNumeric(3));
 		UserPayload.setUserLastName(xlutils.getCellData("userpostdata", 6, 4));
 		UserPayload.setUserLinkedinUrl(xlutils.getCellData("userpostdata", 6, 5));
 		UserPayload.setUserLocation(xlutils.getCellData("userpostdata", 6, 6));
 		UserPayload.setUserMiddleName(xlutils.getCellData("userpostdata", 6, 7));
-		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 6, 8)+RandomStringUtils.randomNumeric(10));
+		UserPayload.setUserPhoneNumber(xlutils.getCellData("userpostdata", 6, 8) + RandomStringUtils.randomNumeric(10));
 
 		List userRoleMaps = new ArrayList<>();
 		userRoleMaps.add(UserRoleMap);
@@ -164,7 +164,7 @@ public class UserBody extends RestUtils {
 		UserRoleMap.setUserRoleStatus("active");
 
 		UserPayload.setUserRoleMaps(userRoleMaps);
-		
+
 		UserPayload.setUserTimeZone(xlutils.getCellData("userpostdata", 6, 11));
 		UserPayload.setUserVisaStatus(xlutils.getCellData("userpostdata", 6, 12));
 
@@ -182,15 +182,15 @@ public class UserBody extends RestUtils {
 		UserWithoutRole.setUserLocation(xlutils.getCellData("userputdata", 1, 6));
 		UserWithoutRole.setUserMiddleName(xlutils.getCellData("userputdata", 1, 7));
 		UserWithoutRole.setUserPhoneNumber(UserPayload.getUserPhoneNumber());
-		
+
 		UserProgBatchIdRoleMap.setUserId(AdminUser);
-	//	UserPayload.setUserId(AdminUser);
+		// UserPayload.setUserId(AdminUser);
 		UserWithoutRole.setUserTimeZone(xlutils.getCellData("userputdata", 1, 11));
 		UserWithoutRole.setUserVisaStatus(xlutils.getCellData("userputdata", 1, 12));
 
 		return UserWithoutRole;
 	}
-	
+
 	public static UserWithoutRole PutUserMissingFieldsBody() throws IOException {
 
 		UserWithoutRole.setUserComments(xlutils.getCellData("userputdata", 4, 0));
@@ -202,9 +202,9 @@ public class UserBody extends RestUtils {
 		UserWithoutRole.setUserLocation(xlutils.getCellData("userputdata", 4, 6));
 		UserWithoutRole.setUserMiddleName(xlutils.getCellData("userputdata", 4, 7));
 		UserWithoutRole.setUserPhoneNumber(xlutils.getCellData("userputdata", 4, 8));
-		
+
 		UserProgBatchIdRoleMap.setUserId(AdminUser);
-	//	UserPayload.setUserId(AdminUser);
+		// UserPayload.setUserId(AdminUser);
 		UserWithoutRole.setUserTimeZone(xlutils.getCellData("userputdata", 4, 11));
 		UserWithoutRole.setUserVisaStatus(xlutils.getCellData("userputdata", 4, 12));
 
@@ -219,7 +219,7 @@ public class UserBody extends RestUtils {
 
 		return UserRoleMap;
 	}
-	
+
 	public static UserRoleMap PutUserRoleStatusMissingIDBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 5, 9));
@@ -228,7 +228,7 @@ public class UserBody extends RestUtils {
 
 		return UserRoleMap;
 	}
-	
+
 	public static UserRoleMap PutUserRoleStatusMissingStatsBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 6, 9));
@@ -237,7 +237,7 @@ public class UserBody extends RestUtils {
 
 		return UserRoleMap;
 	}
-	
+
 	public static UserRoleMap PutUserRoleStatusDifferentRoleIdBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 8, 9));
@@ -251,7 +251,7 @@ public class UserBody extends RestUtils {
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchBody() throws IOException {
 
 		UserProgBatchIdRoleMap.setProgramId(ProgramPayload.getProgramId());
-	//UserProgBatchIdRoleMap.setRoleId(UserRoleMap.getRoleId());
+		// UserProgBatchIdRoleMap.setRoleId(UserRoleMap.getRoleId());
 		UserProgBatchIdRoleMap.setRoleId("R01");
 		UserProgBatchIdRoleMap.setUserId(AdminUser);
 
@@ -266,7 +266,7 @@ public class UserBody extends RestUtils {
 
 		return UserProgBatchIdRoleMap;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchMsngFieldBody() throws IOException {
 
@@ -285,12 +285,12 @@ public class UserBody extends RestUtils {
 
 		return UserProgBatchIdRoleMap;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchInvalidBody() throws IOException {
 
 		UserProgBatchIdRoleMap.setProgramId(ProgramPayload.getProgramId());
-	//UserProgBatchIdRoleMap.setRoleId(UserRoleMap.getRoleId());
+		// UserProgBatchIdRoleMap.setRoleId(UserRoleMap.getRoleId());
 		UserProgBatchIdRoleMap.setRoleId("R03");
 		UserProgBatchIdRoleMap.setUserId(AdminUser);
 

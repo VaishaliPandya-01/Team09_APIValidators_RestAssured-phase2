@@ -16,7 +16,7 @@ public class UserPayload {
     private List<UserRoleMap> userRoleMaps;
     private String userTimeZone;
     private String userVisaStatus;
-  //  private String userId;
+    
     
     
 
@@ -27,6 +27,7 @@ public class UserPayload {
 		this.userId = userId; 
 	}*/
     
+	
 	public String getUserComments() {
 		return userComments;
 	}
