@@ -433,7 +433,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 			response.then().assertThat()
 			.statusCode(statusCode)
-			.body(matchesJsonSchema(programjson))
+			.body(matchesJsonSchema(programPostjson))
 			.log().all();
 
 			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
