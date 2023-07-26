@@ -1,4 +1,4 @@
-package api.PayLoad;
+package api.payload;
 
 public class BatchPayload {
 	

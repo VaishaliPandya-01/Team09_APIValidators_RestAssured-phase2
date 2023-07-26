@@ -1,4 +1,4 @@
-package api.Utilities;
+package api.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +39,7 @@ public class XLUtils {
 		 jsonFile= new File(jsonPath);	
 		 
 		 return jsonFile;
-	 }
+	 } 
 	 
 	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
 	{
