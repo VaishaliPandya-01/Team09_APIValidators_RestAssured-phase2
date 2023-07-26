@@ -13,22 +13,8 @@ public class AssignmentSubmitPayload {
 	private Integer submissionId;
 	private String userId;
 	private Integer assignmentId;
-	private String gradedBy;
-	private String grade;	
-	
-	
-	public String getGradedBy() {
-		return gradedBy;
-	}
-	public void setGradedBy(String gradedBy) {
-		this.gradedBy = gradedBy;
-	}
-	public String getGrade() {
-		return grade;
-	}
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
+
+
 	public String getUserId() {
 		return userId;
 	}

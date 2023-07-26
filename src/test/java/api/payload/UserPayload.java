@@ -17,9 +17,7 @@ public class UserPayload {
     private String userTimeZone;
     private String userVisaStatus;
     private String userId;
-    
-    
-    
+
 
 	public String getUserId() {
 		return userId;

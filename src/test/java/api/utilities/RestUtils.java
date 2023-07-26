@@ -27,6 +27,10 @@ public class RestUtils {
 	public static File AssignSubmitPostjson = xlutils.getJSONFile(path.getString("AssignSubmitPostjson"));
 	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
 	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
+	public static File postbatchJson = xlutils.getJSONFile(path.getString("postbatchJson"));			
+	public static File getbatchbynameJson = xlutils.getJSONFile(path.getString("getbatchbynameJson"));
+	public static File getbatchIDJson = xlutils.getJSONFile(path.getString("getbatchIDJson"));
+	public static File updatebatchIDJson = xlutils.getJSONFile(path.getString("batchupdatebyIDJson"));
 	
 	public static Logger log = LogManager.getLogger();
 	
