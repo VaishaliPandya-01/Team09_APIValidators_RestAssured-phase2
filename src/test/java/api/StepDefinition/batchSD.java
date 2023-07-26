@@ -431,22 +431,7 @@ public class batchSD extends RestUtils{
 			}
 	}
 		
-		
-//			@Then("User receives {int} Not Found Status with message and boolean success details")
-//			public void user_receives_Not_Found_Status_with_message_and_boolean_success_details(Integer statusCode) {
-//				if (statusCode == 404) {				
-//
-//					response.then().assertThat()
-//					.statusCode(statusCode)
-//					.log().all();	
-//
-//					log.info("Status code " + response.getStatusCode());
-//					log.info("Validation message " + response.getBody().asString());
-//
-//				} else {
-//					log.info("Request failed");
-//				}
-//		}
+
 
 		
 }
