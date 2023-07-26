@@ -28,18 +28,14 @@ public class XLUtils {
 	{
 		this.path=path;
 	}
-	 
-	 public XLUtils()
-	 {
-		 
-	 }
-	 
+	
 	 public File getJSONFile (String jsonPath)
 	 {
 		 jsonFile= new File(jsonPath);	
 		 
 		 return jsonFile;
-	 } 
+	 }
+
 	 
 	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
 	{

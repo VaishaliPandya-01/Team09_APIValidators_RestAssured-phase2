@@ -20,10 +20,8 @@ public class BatchRequests extends RestUtils{
 				when().post(routes.getString("Batch_Post_URL"));
 
 		return response;
-	}
-	
+	}	
 
-	
 	// Get all batch
 		public static Response GetRequest () {
 			 response = when().get(routes.getString("Batch_GetAll_URL"));
@@ -60,15 +58,13 @@ public class BatchRequests extends RestUtils{
 	
 	//Delete Request
 		public static Response DeletRequest() {
-             System.out.println("sudhabatchid"+BatchPayload.getBatchId());
+
 			response = when().
 					delete(routes.getString("Batch_Delete_URL")+BatchPayload.getBatchId());
 
 			return response;
 		}
-
 		
 
 }
-
 

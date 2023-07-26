@@ -13,10 +13,8 @@ public class AssignmentSubmitPayload {
 	private Integer submissionId;
 	private String userId;
 	private Integer assignmentId;
-	
-	
-	
-	
+
+
 	public String getUserId() {
 		return userId;
 	}
