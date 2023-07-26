@@ -1,1 +1,0 @@
-{"uuid":"9c96334b-461e-4084-9849-0aa33f603d1b","name":"Scenario: Check if user able to update a user with valid User Id and request body","children":["0b42f000-833b-40a6-bc42-6c30937c29f5"],"befores":[],"afters":[],"start":1690358546805,"stop":1690358546819}

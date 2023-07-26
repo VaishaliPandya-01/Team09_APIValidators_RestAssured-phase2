@@ -1,0 +1,1 @@
+{"uuid":"a0f42f96-d547-4fb9-a9c2-7ba0d32a50cf","name":"Scenario: Check if user able to update a user role status with valid User Id and request body","children":["97182bf6-741f-4fdf-8b08-2a29b85ef163"],"befores":[],"afters":[],"start":1690395996830,"stop":1690395997267}
