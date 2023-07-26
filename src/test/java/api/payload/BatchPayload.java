@@ -8,6 +8,7 @@ public class BatchPayload {
 	private String batchNoOfClasses;
 	private String batchStatus;
 	private Integer programId;	
+
 		
 	public Integer getProgramId() {
 		return programId;
@@ -45,4 +46,5 @@ public class BatchPayload {
 	public void setBatchStatus(String batchStatus) {
 		this.batchStatus = batchStatus;
 	}
+
 }

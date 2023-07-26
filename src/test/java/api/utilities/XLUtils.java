@@ -22,13 +22,15 @@ public class XLUtils {
 	public XSSFCell cell;
 	public CellStyle style;   
 	String path;
+
+
 	public File jsonFile;
 	
 	 public XLUtils(String path)
 	{
 		this.path=path;
 	}
-	
+
 	 public File getJSONFile (String jsonPath)
 	 {
 		 jsonFile= new File(jsonPath);	
@@ -83,6 +85,7 @@ public class XLUtils {
 		
 		cell=row.createCell(colnum);
 		cell.setCellValue(data);
+
 		fo=new FileOutputStream(path);
 		workbook.write(fo);		
 		workbook.close();
