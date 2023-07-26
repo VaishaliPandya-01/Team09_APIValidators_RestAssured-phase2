@@ -1,1 +1,0 @@
-{"uuid":"d3d25a0e-a335-40b4-ac4f-4c9a93120edb","name":"Scenario: Check if user able to add a record with valid endpoint and request body(non existing values)","children":["04d2749d-61bf-42bf-af69-ee54f7d1104d"],"befores":[],"afters":[],"start":1690359183918,"stop":1690359184466}
