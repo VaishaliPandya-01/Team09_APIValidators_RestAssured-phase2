@@ -16,18 +16,9 @@ public class UserPayload {
     private List<UserRoleMap> userRoleMaps;
     private String userTimeZone;
     private String userVisaStatus;
-    
-    
-    
 
-/*	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId; 
-	}*/
-    
-	
+
+
 	public String getUserComments() {
 		return userComments;
 	}
@@ -100,6 +91,4 @@ public class UserPayload {
 	public void setUserVisaStatus(String userVisaStatus) {
 		this.userVisaStatus = userVisaStatus;
 	}
-    
-
 }

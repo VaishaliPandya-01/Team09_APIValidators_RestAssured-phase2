@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLUtils {
-	
+
 	public FileInputStream fi;
 	public FileOutputStream fo;
 	public XSSFWorkbook workbook;
@@ -22,20 +22,22 @@ public class XLUtils {
 	public XSSFCell cell;
 	public CellStyle style;   
 	String path;
-	
+
+
 	public File jsonFile;
 	
 	 public XLUtils(String path)
 	{
 		this.path=path;
 	}
-	 
+
 	 public File getJSONFile (String jsonPath)
 	 {
 		 jsonFile= new File(jsonPath);	
 		 
 		 return jsonFile;
 	 }
+
 	 
 	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
 	{
@@ -82,13 +84,12 @@ public class XLUtils {
 		row=sheet.getRow(rownum);
 		
 		cell=row.createCell(colnum);
-	//	cell.setCellValue(data);
-	//	cell.setCellValue(data);
+		cell.setCellValue(data);
+
 		fo=new FileOutputStream(path);
 		workbook.write(fo);		
 		workbook.close();
 		fi.close();
 		fo.close();
 	}	
-
 }

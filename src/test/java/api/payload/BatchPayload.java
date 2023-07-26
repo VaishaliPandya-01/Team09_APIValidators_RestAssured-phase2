@@ -8,7 +8,7 @@ public class BatchPayload {
 	private String batchNoOfClasses;
 	private String batchStatus;
 	private Integer programId;	
-	
+
 		
 	public Integer getProgramId() {
 		return programId;

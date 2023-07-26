@@ -4,7 +4,8 @@
   <artifactId>Team09_APIValidators_RestAssured-phase2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <properties>
+   <properties>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>18</maven.compiler.source>
 		<maven.compiler.target>18</maven.compiler.target>
