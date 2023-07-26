@@ -9,7 +9,7 @@ import api.utilities.RestUtils;
 
 public class ProgramBody extends RestUtils {
 
-	//PostBody_non-existingValues
+
 	public static ProgramPayload PostBody() throws IOException {
 
 		ProgramPayload.setProgramName(xlutils.getCellData("programpostdata", 1, 0)+RandomStringUtils.randomNumeric(3));
@@ -99,5 +99,4 @@ public class ProgramBody extends RestUtils {
 		
 		return ProgramPayload;
 	}
-   
 }

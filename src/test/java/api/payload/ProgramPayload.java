@@ -7,6 +7,7 @@ public class ProgramPayload {
 	private String programStatus;
 	private Integer programId;
 	
+
 	
 	public Integer getProgramId() {
 		
@@ -44,7 +45,4 @@ public class ProgramPayload {
 		this.programStatus = programStatus;
 		
 	}
-	
-	
-	
 }
