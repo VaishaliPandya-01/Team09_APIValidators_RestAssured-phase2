@@ -22,12 +22,9 @@ public class AssignmentSubmitRequest extends RestUtils{
 
 		try {
 
-			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentSubmitPostLog.txt"));
 			response = given().
 					contentType(ContentType.JSON).
 					body(payload).
-					filter(RequestLoggingFilter.logRequestTo(logs)).
-					filter(ResponseLoggingFilter.logResponseTo(logs)).
 					when().post(routes.getString("AssignmentSubmit_Post_URL"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,16 +93,14 @@ public class AssignmentSubmitRequest extends RestUtils{
 
 		try {
 
-			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentSubmitPutLog.txt"));
+	
 			response = given().
 					contentType(ContentType.JSON).
 					accept(ContentType.JSON).
 					body(payload).
-					filter(RequestLoggingFilter.logRequestTo(logs)).
-					filter(ResponseLoggingFilter.logResponseTo(logs)).
 					when().put(routes.getString("AssignmentSubmit_PutResubmit_URL")+AssignmentSubmitPayload.getSubmissionId());
 
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
