@@ -21,11 +21,7 @@ import io.cucumber.java.en.When;
 
 public class batchSD extends RestUtils{
 
-	static String programName;
-	static int programID;
-	static int batchID;
-	static String batchName;
-	public String requestBody;
+
 	
 	
 	//baseURL
@@ -71,12 +67,12 @@ public class batchSD extends RestUtils{
 
 		@Then("User receives {int} created status for batch")
 		public void user_receives_created_status_for_batch(Integer statusCode) {	
-			response.then().assertThat().body(matchesJsonSchema(postbatchJson)).statusCode(statusCode).log().all();
+			//response.then().assertThat().body(matchesJsonSchema(postbatchJson)).statusCode(statusCode).log().all();
 			if (statusCode == 201) {
 
 				response.then().assertThat()
 				.statusCode(statusCode)
-				//.body(matchesJsonSchema(batchjson))
+				.body(matchesJsonSchema(postbatchJson))
 				.log().all();
 
 				assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
@@ -266,6 +262,7 @@ public class batchSD extends RestUtils{
 				if (statusCode == 200) {				
 
 					response.then().assertThat()
+					.body(matchesJsonSchema(updatebatchIDJson))
 					.statusCode(statusCode)
 					.log().all();	
 
@@ -431,7 +428,22 @@ public class batchSD extends RestUtils{
 			}
 	}
 		
-
+		
+//			@Then("User receives {int} Not Found Status with message and boolean success details")
+//			public void user_receives_Not_Found_Status_with_message_and_boolean_success_details(Integer statusCode) {
+//				if (statusCode == 404) {				
+//
+//					response.then().assertThat()
+//					.statusCode(statusCode)
+//					.log().all();	
+//
+//					log.info("Status code " + response.getStatusCode());
+//					log.info("Validation message " + response.getBody().asString());
+//
+//				} else {
+//					log.info("Request failed");
+//				}
+//		}
 
 		
 }
