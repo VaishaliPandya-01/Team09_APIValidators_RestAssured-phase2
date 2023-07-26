@@ -21,7 +21,7 @@ public class RestUtils {
 	
 	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
 	
-	public static File programjson = xlutils.getJSONFile(path.getString("programjson"));
+	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostjson"));
 	public static File AssignSubmitjson = xlutils.getJSONFile(path.getString("AssignSubmitjson"));
 	
 	public static Logger log = LogManager.getLogger();

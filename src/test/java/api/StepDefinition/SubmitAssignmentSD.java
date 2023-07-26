@@ -433,7 +433,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 			response.then().assertThat()
 			.statusCode(statusCode)
-			.body(matchesJsonSchema(programjson))
+			.body(matchesJsonSchema(programPostjson))
 			.log().all();
 
 			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
@@ -495,6 +495,7 @@ public class SubmitAssignmentSD extends RestUtils{
 			//.body(matchesJsonSchema(batchjson))
 			.log().all();
 
+			assertEquals(0, 0);
 			assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
 			assertEquals(BatchPayload.getBatchName(), response.jsonPath().getString("batchName"));
 			assertEquals(BatchPayload.getBatchNoOfClasses(), response.jsonPath().getString("batchNoOfClasses"));
