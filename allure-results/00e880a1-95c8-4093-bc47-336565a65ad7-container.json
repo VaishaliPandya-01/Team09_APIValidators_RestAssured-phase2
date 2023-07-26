@@ -1,0 +1,1 @@
+{"uuid":"00e880a1-95c8-4093-bc47-336565a65ad7","name":"Scenario: Check if user able to retrieve all user by role with valid LMS API","children":["3621eaa9-bd46-43f5-9db3-872ce16a8e14"],"befores":[],"afters":[],"start":1690395984315,"stop":1690395987014}

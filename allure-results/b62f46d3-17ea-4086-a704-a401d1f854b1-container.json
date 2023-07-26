@@ -1,0 +1,1 @@
+{"uuid":"b62f46d3-17ea-4086-a704-a401d1f854b1","name":"Scenario: Check if user able to create a User with valid endpoint and ExistingPhoneNumber(non existing values)","children":["5eb604fa-bbe2-42d6-a0dd-d6e7e8d01bdb"],"befores":[],"afters":[],"start":1690395997292,"stop":1690395997924}

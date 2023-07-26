@@ -64,7 +64,4 @@ public class BatchRequests extends RestUtils{
 
 			return response;
 		}
-		
-
 }
-

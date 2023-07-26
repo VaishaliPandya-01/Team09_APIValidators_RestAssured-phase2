@@ -1,10 +1,11 @@
 package api.payload;
 
 public class UserRoleMap {
+
 	private String roleId;
     private String userRoleStatus;
-    
-    
+
+
 	public String getRoleId() {
 		return roleId;
 	}
@@ -17,6 +18,5 @@ public class UserRoleMap {
 	public void setUserRoleStatus(String userRoleStatus) {
 		this.userRoleStatus = userRoleStatus;
 	}
-    
-    
+
 }
