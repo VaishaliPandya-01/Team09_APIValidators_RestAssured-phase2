@@ -21,8 +21,10 @@ public class RestUtils {
 	
 	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
 	
-	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostjson"));
-	public static File AssignSubmitjson = xlutils.getJSONFile(path.getString("AssignSubmitjson"));
+	public static File programjson = xlutils.getJSONFile(path.getString("programjson"));
+	public static File AssignSubmitPostjson = xlutils.getJSONFile(path.getString("AssignSubmitPostjson"));
+	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
+	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
 	
 	public static Logger log = LogManager.getLogger();
 	
@@ -37,4 +39,5 @@ public class RestUtils {
 	public static String AdminUser;
 	public static String StudentUser;	
 	
+
 }

@@ -88,7 +88,7 @@ Feature: Assignmdent Submit Scenario
   Scenario: Check if user able to retrieve a submission with valid User ID
     Given User creates request for the LMS API endpoint
     When User sends Get HTTPS Request for Assignment submit by User ID
-    Then User receives 200 OK Status with response body
+    Then User receives 200 OK Status with response body for getting assignment submit by user ID
 
   @Get_Assignment_Submission_By_Batch_ID
   Scenario: Check if user able to retrieve a submission with valid Batch ID
@@ -142,7 +142,7 @@ Feature: Assignmdent Submit Scenario
   Scenario: Check if user able to retrieve a grades with valid Assignment ID
     Given User creates request for the LMS API endpoint
     When User sends HTTPS Get Request for Assignment submit with Batch ID
-    Then User receives 200 OK Status with response body
+    Then User receives 200 OK Status with response body for getting assignment submit by grade assgn ID
 
   @Delete_Assignment_Submit
   Scenario: Check if user able to delete a submission with valid submission Id

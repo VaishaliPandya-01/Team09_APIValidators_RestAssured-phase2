@@ -30,7 +30,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 		String BaseURI = routes.getString("BaseUrl");
 		baseURI = BaseURI;
-		log.info("***User sends request with BaseURL***");
+		log.info("***User sends request with BaseURL***"+System.lineSeparator());
 	}
 
 
@@ -251,7 +251,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_by_User_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByUserIDRequest();
-		log.info("******Get Assignment Submit by User ID******");
+		log.info("******Get Assignment Submit by User ID******"+System.lineSeparator());
 	}
 
 
@@ -433,7 +433,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 			response.then().assertThat()
 			.statusCode(statusCode)
-			.body(matchesJsonSchema(programPostjson))
+			.body(matchesJsonSchema(programjson))
 			.log().all();
 
 			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
@@ -459,7 +459,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 			response.then().assertThat()
 			.statusCode(statusCode)
-			.body(matchesJsonSchema(AssignSubmitjson))
+			.body(matchesJsonSchema(AssignSubmitPostjson))
 			.log().all();
 
 			assertEquals(AssignmentSubmitPayload.getSubDesc(), response.jsonPath().getString("subDesc"));
@@ -495,7 +495,6 @@ public class SubmitAssignmentSD extends RestUtils{
 			//.body(matchesJsonSchema(batchjson))
 			.log().all();
 
-			assertEquals(0, 0);
 			assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
 			assertEquals(BatchPayload.getBatchName(), response.jsonPath().getString("batchName"));
 			assertEquals(BatchPayload.getBatchNoOfClasses(), response.jsonPath().getString("batchNoOfClasses"));
@@ -549,6 +548,46 @@ public class SubmitAssignmentSD extends RestUtils{
 			log.error("Not Found: 404");
 		}
 	}
+	
+	//Validate status code 200 for getting assignment submit by grade assgn ID
+		@Then("User receives {int} OK Status with response body for getting assignment submit by grade assgn ID")
+		public void User_receives_OK_Status_with_response_body_for_getting_assignment_submit_by_grade_assgn_ID(Integer statusCode) {
+
+			if (statusCode == 200) {				
+
+				response.then().assertThat()
+				.statusCode(statusCode)
+				.body(matchesJsonSchema(AssignSubmitgradeIDjson))
+				.log().all();	
+
+				log.info("Get request with Status code " + response.getStatusCode());
+				log.info("Values " + response.getBody().asString());
+
+			} else {
+				
+				log.info("Request failed with status code"+ response.getStatusCode());
+			}
+		}
+		
+	
+	//Validate status code 200 for getting assignment submit by user ID 
+		@Then("User receives {int} OK Status with response body for getting assignment submit by user ID")
+		public void User_receives_OK_Status_with_response_body_for_getting_assignment_submit_by_user_ID(Integer statusCode) {
+
+			if (statusCode == 200) {				
+
+				response.then().assertThat()
+				.statusCode(statusCode)
+				.body(matchesJsonSchema(AssignSubmitUserIDjson))
+				.log().all();	
+
+				log.info("Get request with Status code " + response.getStatusCode());
+				log.info("Values " + response.getBody().asString());
+
+			} else {
+				log.info("Request failed with status code"+ response.getStatusCode());
+			}
+		}
 
 
 	//validate created 201
