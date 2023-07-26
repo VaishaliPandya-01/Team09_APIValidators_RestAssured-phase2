@@ -11,15 +11,15 @@ import io.cucumber.junit.CucumberOptions;
 
 //D:\Team09_APIValidators_RestAssured-phase2\src\test\resources\features
 
-@CucumberOptions(features ={"src/test/resources/features/"}, 
-glue = {"api.StepDefinition"}, 
+@CucumberOptions(features ={"src/test/resources/features"}, 
+glue = {"api.Stepdefinition"}, 
 monochrome = true, 
 plugin = {"pretty",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		"io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
-		"html:target/cucmberreport",
-		"html:target/JUNITHtmlReports/report.html",
-		"junit:target/JUNITReports/reports.xml"})
+		"html:target/cucmberreport"})
+	//	"html:target/JUNITHtmlReports/report.html",
+	//	"junit:target/JUNITReports/reports.xml"})
 
 public class TestRunner {
 
