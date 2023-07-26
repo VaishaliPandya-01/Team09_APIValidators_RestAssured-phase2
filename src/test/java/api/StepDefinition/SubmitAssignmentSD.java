@@ -30,7 +30,7 @@ public class SubmitAssignmentSD extends RestUtils{
 
 		String BaseURI = routes.getString("BaseUrl");
 		baseURI = BaseURI;
-		log.info("***User sends request with BaseURL***"+System.lineSeparator());
+		log.info("***User sends request with BaseURL***");
 	}
 
 
@@ -251,7 +251,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void User_sends_Get_HTTPS_Request_for_Assignment_submit_by_User_ID() {
 
 		AssignmentSubmitRequest.GetAssignmentByUserIDRequest();
-		log.info("******Get Assignment Submit by User ID******"+System.lineSeparator());
+		log.info("******Get Assignment Submit by User ID******");
 	}
 
 
