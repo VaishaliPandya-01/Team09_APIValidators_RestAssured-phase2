@@ -1,0 +1,1 @@
+{"uuid":"225f922a-735d-4a87-8cf3-01c14cf54af4","name":"Scenario: Check if user is able to delete arecord with invalid assignment ID","children":["bc9f0ea8-9318-42a1-badc-61d1a6773c7f"],"befores":[],"afters":[],"start":1690378343785,"stop":1690378344116}

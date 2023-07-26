@@ -1,0 +1,1 @@
+{"uuid":"b193adfe-ae75-42ba-9163-859d52bee11b","name":"Scenario: Check if user is able to add a record missing mandatory field","children":["c1cff91c-1dcc-42b2-9314-aa7df14a2002"],"befores":[],"afters":[],"start":1690386833574,"stop":1690386834265}
