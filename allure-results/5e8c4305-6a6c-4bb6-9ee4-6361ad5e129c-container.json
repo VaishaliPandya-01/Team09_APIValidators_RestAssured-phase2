@@ -1,0 +1,1 @@
+{"uuid":"5e8c4305-6a6c-4bb6-9ee4-6361ad5e129c","name":"Scenario: Check if user able to create a program with valid endpoint and request body (non existing values)","children":["47d034bb-a93f-4dfe-834a-c5dd8b6c4143"],"befores":[],"afters":[],"start":1690359012144,"stop":1690359012153}

@@ -10,9 +10,7 @@
 		<maven.compiler.target>18</maven.compiler.target>
 		<!-- <maven.compiler.release>18</maven.compiler.release>-->
 	</properties>
-
-
-	<dependencies>
+<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
@@ -20,6 +18,12 @@
 			<artifactId>rest-assured</artifactId>
 			<version>5.3.1</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20210307</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
@@ -149,10 +153,11 @@
 			<artifactId>log4j-api</artifactId>
 			<version>2.19.0</version>
 		</dependency>
-
+		
 
 	</dependencies>
 
+	
 	<build>
 		<pluginManagement>
 			<plugins>

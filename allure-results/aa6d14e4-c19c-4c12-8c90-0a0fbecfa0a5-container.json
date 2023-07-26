@@ -1,0 +1,1 @@
+{"uuid":"aa6d14e4-c19c-4c12-8c90-0a0fbecfa0a5","name":"Scenario: Check if user able to create a User with valid endpoint and MissingMandatoryFields (non existing values)","children":["20832faf-28ef-4ad2-875b-0363944c95b1"],"befores":[],"afters":[],"start":1690358546573,"stop":1690358546590}

@@ -1,0 +1,1 @@
+{"uuid":"e1ec2789-4f37-4fb0-a690-15a563839681","name":"Scenario: Check if user able to create a User with valid endpoint and request body (non existing values)","children":["8e807fb3-5443-4f76-b666-be7e2c785643"],"befores":[],"afters":[],"start":1690359011794,"stop":1690359011810}
