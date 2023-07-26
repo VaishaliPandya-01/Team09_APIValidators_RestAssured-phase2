@@ -38,7 +38,8 @@ public class RestUtils {
 	public static ResourceBundle path =ResourceBundle.getBundle("path");
 	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
 	
-	public static File postAssignmentJson = xlutils.getJSONFile(path.getString("postAssignmentJson"));			
+	public static File postAssignmentJson = xlutils.getJSONFile(path.getString("postAssignmentJson"));	
+	public static File GetByIdJson = xlutils.getJSONFile(path.getString("GetByIdJson"));
 	//public static File getbatchbynameJson = xlutils.getJSONFile(path.getString("getbatchbynameJson"));
 	//public static File getbatchIDJson = xlutils.getJSONFile(path.getString("getbatchIDJson"));
 	//public static File updatebatchIDJson = xlutils.getJSONFile(path.getString("batchupdatebyIDJson"));

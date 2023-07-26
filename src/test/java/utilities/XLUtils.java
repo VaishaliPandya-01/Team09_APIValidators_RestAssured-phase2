@@ -22,10 +22,7 @@ public class XLUtils {
 	public CellStyle style;   
 	String path;
 	 public File jsonFile;
-	public XLUtils()
-	 {
-		 
-	 }
+	
 	 
 	 public File getJSONFile (String jsonPath)
 	 {

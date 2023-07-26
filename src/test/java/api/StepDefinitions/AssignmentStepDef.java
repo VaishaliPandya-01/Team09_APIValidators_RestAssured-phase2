@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.ResourceBundle;
+
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import org.apache.logging.log4j.LogManager;
 import static io.restassured.RestAssured.baseURI;
