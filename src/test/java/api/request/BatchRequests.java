@@ -13,55 +13,113 @@ public class BatchRequests extends RestUtils{
 	//Post Request
 	public static Response PostRequest(BatchPayload payload) {
 
-		response = given().
-				contentType(ContentType.JSON).
-				accept(ContentType.JSON).
-				body(payload).
-				when().post(routes.getString("Batch_Post_URL"));
+		try {
 
+			response = given().
+					contentType(ContentType.JSON).
+					accept(ContentType.JSON).
+					body(payload).
+					when().post(routes.getString("Batch_Post_URL"));
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}	
 
+
 	// Get all batch
-		public static Response GetRequest () {
-			 response = when().get(routes.getString("Batch_GetAll_URL"));
-			return response;
+	public static Response GetRequest () {
+
+		try {
+
+			response = when().
+					get(routes.getString("Batch_GetAll_URL"));
+
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		//Get Batch by ID
-		public static Response GetBatchByIDRequest () {
-			response = when().get(routes.getString("Batch_GetbyId_URL")+BatchPayload.getBatchId());
-			
-			return response;
+
+		return response;
+	}
+
+
+	//Get Batch by ID
+	public static Response GetBatchByIDRequest () {
+
+		try {
+
+			response = when().
+					get(routes.getString("Batch_GetbyId_URL")+BatchPayload.getBatchId());
+
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		//Get Batch by Name
-		public static Response GetBatchByNameRequest () {
-			 response = when().get(routes.getString("Batch_GetbyName_URL")+BatchPayload.getBatchName());
-			return response;
+		return response;
+	}
+
+
+	//Get Batch by Name
+	public static Response GetBatchByNameRequest () {
+
+		try {
+
+			response = when().
+					get(routes.getString("Batch_GetbyName_URL")+BatchPayload.getBatchName());
+
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-		//Get Batch by ProgId
-		public static Response GetBatchByProgIDRequest () {
-			 response = when().get(routes.getString("Batch_GetBatchByProgramID")+BatchPayload.getProgramId());
-			return response;
+
+		return response;
+	}
+
+
+	//Get Batch by ProgId
+	public static Response GetBatchByProgIDRequest () {
+
+		try {
+
+			response = when().
+					get(routes.getString("Batch_GetBatchByProgramID")+BatchPayload.getProgramId());
+
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		//Update by ID
-		public static Response UpdateBatchByIDRequest (BatchPayload updateBatch) {		
+
+		return response;
+	}
+
+	//Update by ID
+	public static Response UpdateBatchByIDRequest (BatchPayload updateBatch) {	
+
+		try {
+
 			response = given().
 					contentType(ContentType.JSON).
 					accept(ContentType.JSON).
 					body(updateBatch).
 					when().put(routes.getString("Batch_UpdateByBatchID")+BatchPayload.getBatchId());
-			return response;
+
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-	
+
+		return response;
+	}
+
 	//Delete Request
-		public static Response DeletRequest() {
+	public static Response DeletRequest() {
+
+		try {
 
 			response = when().
 					delete(routes.getString("Batch_Delete_URL")+BatchPayload.getBatchId());
 
-			return response;
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
+
+		return response;
+	}
 }

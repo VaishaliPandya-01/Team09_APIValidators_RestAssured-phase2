@@ -1,19 +1,20 @@
 package api.requestbody;
 
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-import api.payload.*;
 import api.payload.UserPayload;
+import api.payload.UserProgBatchIdRoleMap;
+import api.payload.UserRoleMap;
 import api.payload.UserWithoutRole;
 import api.utilities.RestUtils;
 
 public class UserBody extends RestUtils {
 
+	//post body
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostBody() throws IOException {
 
@@ -40,6 +41,7 @@ public class UserBody extends RestUtils {
 		return UserPayload;
 	}
 
+	//post existing value
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostExtgPhnNumBody() throws IOException {
 
@@ -66,6 +68,7 @@ public class UserBody extends RestUtils {
 		return UserPayload;
 	}
 
+	//post missing field value
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostMissingFieldsBody() throws IOException {
 
@@ -93,6 +96,7 @@ public class UserBody extends RestUtils {
 
 	}
 
+	//post admin  body
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostAdminBody() throws IOException {
 
@@ -119,6 +123,7 @@ public class UserBody extends RestUtils {
 		return UserPayload;
 	}
 
+	//post staff body
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostStaffBody() throws IOException {
 
@@ -146,6 +151,7 @@ public class UserBody extends RestUtils {
 		return UserPayload;
 	}
 
+	//post student body
 	@SuppressWarnings("unchecked")
 	public static UserPayload PostStudentBody() throws IOException {
 
@@ -172,6 +178,7 @@ public class UserBody extends RestUtils {
 		return UserPayload;
 	}
 
+	//put user body
 	public static UserWithoutRole PutUserBody() throws IOException {
 
 		UserWithoutRole.setUserComments(xlutils.getCellData("userputdata", 1, 0));
@@ -192,6 +199,7 @@ public class UserBody extends RestUtils {
 		return UserWithoutRole;
 	}
 
+	//put missing field body
 	public static UserWithoutRole PutUserMissingFieldsBody() throws IOException {
 
 		UserWithoutRole.setUserComments(xlutils.getCellData("userputdata", 4, 0));
@@ -212,6 +220,7 @@ public class UserBody extends RestUtils {
 		return UserWithoutRole;
 	}
 
+	//Put User Role Status Body
 	public static UserRoleMap PutUserRoleStatusBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 1, 9));
@@ -221,6 +230,7 @@ public class UserBody extends RestUtils {
 		return UserRoleMap;
 	}
 
+	//Put User Role Status Missing ID Body
 	public static UserRoleMap PutUserRoleStatusMissingIDBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 5, 9));
@@ -230,6 +240,7 @@ public class UserBody extends RestUtils {
 		return UserRoleMap;
 	}
 
+	//Put User Role Status Missing Stats Body
 	public static UserRoleMap PutUserRoleStatusMissingStatsBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 6, 9));
@@ -239,6 +250,7 @@ public class UserBody extends RestUtils {
 		return UserRoleMap;
 	}
 
+	//Put User Role Status Different Role Id Body
 	public static UserRoleMap PutUserRoleStatusDifferentRoleIdBody() throws IOException {
 
 		UserRoleMap.setRoleId(xlutils.getCellData("userputdata", 8, 9));
@@ -248,6 +260,8 @@ public class UserBody extends RestUtils {
 		return UserRoleMap;
 	}
 
+
+	//Assign User To Prog Batch Body
 	@SuppressWarnings("unchecked")
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchBody() throws IOException {
 
@@ -268,6 +282,7 @@ public class UserBody extends RestUtils {
 		return UserProgBatchIdRoleMap;
 	}
 
+	//Assign User To Prog Batch Msng Field Body
 	@SuppressWarnings("unchecked")
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchMsngFieldBody() throws IOException {
 
@@ -287,6 +302,7 @@ public class UserBody extends RestUtils {
 		return UserProgBatchIdRoleMap;
 	}
 
+	//Assign User To Prog Batch Invalid Body
 	@SuppressWarnings("unchecked")
 	public static UserProgBatchIdRoleMap AssignUserToProgBatchInvalidBody() throws IOException {
 

@@ -1,31 +1,21 @@
 package api.StepDefinition;
 
-import static io.restassured.RestAssured.baseURI;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static org.junit.Assert.assertEquals;
 
-import api.utilities.RestUtils;
-import io.cucumber.java.en.*;
 import java.io.IOException;
 
 import api.request.BatchRequests;
 import api.request.ProgramRequests;
 import api.request.UserRequests;
 import api.requestbody.BatchBody;
-import api.requestbody.ProgramBody;
 import api.requestbody.UserBody;
-
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
-import static org.junit.Assert.assertEquals;
+import api.utilities.RestUtils;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class UserSD extends RestUtils {
 
-//	@Given("User creates  Request for the LMS API endpoint")
-//	public void user_creates_request_for_the_lms_api_endpoint() {
-//
-//		String BaseURI = routes.getString("BaseUrl");
-//		baseURI = BaseURI;
-//		log.info("User Sends request with for the LMS BaseURL");
-//
-//	}
 
 	@When("User sends HTTPS Request GetAllUser")
 	public void user_sends_https_request_get_all_user() {
@@ -161,13 +151,10 @@ public class UserSD extends RestUtils {
 
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
-		// AdminPhonenumber=response.path("userPhoneNumber");
 		AdminUser = response.path("userId");
-		// UserProgBatchIdRoleMap.setUserId(AdminUser);
-		// System.out.println("UserID : " + response.path("userId"));
 		System.out.println("Phonenumber : " + response.path("userPhoneNumber"));
 		System.out.println("AdminUserID : " + AdminUser);
-		// System.out.println("AdminUserID : " + AdminUser);
+
 	}
 
 	@Then("User receives status code {int} with response body for creating an User for Admin role")
@@ -210,7 +197,6 @@ public class UserSD extends RestUtils {
 
 		UserPayload = UserBody.PostStaffBody();
 		response = UserRequests.PostRequest(UserPayload);
-		// UserPayload.setUserId(response.path("userId"));
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
 		StaffUser = response.path("userId");
@@ -242,7 +228,6 @@ public class UserSD extends RestUtils {
 			assertEquals(UserPayload.getUserVisaStatus(), response.jsonPath().getString("userVisaStatus"));
 
 			assertEquals(UserPayload.getUserLinkedinUrl(), response.jsonPath().getString("userLinkedinUrl"));
-			//assertEquals(UserProgBatchIdRoleMap.getUserId(), response.jsonPath().getString("userId"));
 
 			log.info("User created successfully with status code " + response.getStatusCode());
 			log.info("User Respose body" + response.getBody().asString());
@@ -259,7 +244,6 @@ public class UserSD extends RestUtils {
 
 		UserPayload = UserBody.PostStudentBody();
 		response = UserRequests.PostRequest(UserPayload);
-		// UserPayload.setUserId(response.path("userId"));
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
 		StudentUser = response.path("userId");
@@ -305,19 +289,13 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS GET Request to view user by userID")
 	public void user_sends_https_get_request_to_view_user_by_user_id() throws IOException {
 
-		// UserPayload=UserBody.PostBody();
 		response = UserRequests.GetUserByIdRequest();
 		System.out.println("View User by userId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info(" View User by userId");
 	}
 
 	@Then("User receives status code {int} with response body for viewing an User by ID")
 	public void user_receives_status_code_with_response_body_for_viewing_an_user_by_id(Integer statusCode) {
-
-//		response.then().log().all();
-//		System.out.println("UserGetRequest by UserID: " + response);
-//		log.info(" User Info for the given id will be displayed ");
 
 		if (statusCode == 200) {
 
@@ -352,8 +330,6 @@ public class UserSD extends RestUtils {
 		UserWithoutRole = UserBody.PutUserMissingFieldsBody();
 		response = UserRequests.PutUserByIdRequest(UserWithoutRole);
 
-		// System.out.println("TimeZone : " + response.path("userTimeZone"));
-
 	}
 
 	@Then("User receives status code {int} with response body for updating User with missingFields")
@@ -376,10 +352,6 @@ public class UserSD extends RestUtils {
 	@Then("User receives status code {int} with response body for updating User by ID")
 	public void user_receives_status_code_with_response_body_for_updating_user_by_id(Integer statusCode) {
 
-//		response.then().log().all();
-//		System.out.println("UserupdateRequest : " + response);
-//		log.info(" User information is updated");
-
 		if (statusCode == 200) {
 
 			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(putUserByIdjson)).log().all();
@@ -394,11 +366,7 @@ public class UserSD extends RestUtils {
 			assertEquals(UserPayload.getUserPhoneNumber(), response.jsonPath().getString("userPhoneNumber"));
 			assertEquals(UserPayload.getUserTimeZone(), response.jsonPath().getString("userTimeZone"));
 			assertEquals(UserPayload.getUserVisaStatus(), response.jsonPath().getString("userVisaStatus"));
-			// assertEquals(UserProgBatchIdRoleMap.getUserId(),
-			// response.jsonPath().getString("userId"));
 			assertEquals(UserPayload.getUserLinkedinUrl(), response.jsonPath().getString("userLinkedinUrl"));
-
-			// assertEquals(BatchPayload.get, response.jsonPath().getString("programName"));
 
 			log.info("User updated successfully with status code " + response.getStatusCode());
 			log.info("User Respose body" + response.getBody().asString());
@@ -421,14 +389,11 @@ public class UserSD extends RestUtils {
 
 	@Then("User receives status code {int} with response body for updating UserRoleStaus")
 	public void user_receives_status_code_with_response_body_for_updating_user_role_staus(Integer statusCode) {
-//		response.then().log().all();
-//		System.out.println("UserupdateRequest : " + response);
-//		log.info(" UserStatus Updated for User:  {userID} msg will be displayed ");
 
 		if (statusCode == 200) {
 
 			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(putUserStatusRolejson)).log()
-					.all();
+			.all();
 
 			assertEquals(UserPayload.getUserComments(), response.jsonPath().getString("userComments"));
 			assertEquals(UserPayload.getUserEduPg(), response.jsonPath().getString("userEduPg"));
@@ -440,14 +405,7 @@ public class UserSD extends RestUtils {
 			assertEquals(UserPayload.getUserPhoneNumber(), response.jsonPath().getString("userPhoneNumber"));
 			assertEquals(UserPayload.getUserTimeZone(), response.jsonPath().getString("userTimeZone"));
 			assertEquals(UserPayload.getUserVisaStatus(), response.jsonPath().getString("userVisaStatus"));
-			// assertEquals(UserProgBatchIdRoleMap.getUserId(),
-			// response.jsonPath().getString("userId"));
 			assertEquals(UserPayload.getUserLinkedinUrl(), response.jsonPath().getString("userLinkedinUrl"));
-			// assertEquals(UserRoleMap.getRoleId(),
-			// response.jsonPath().getString("roleId"));
-			// assertEquals(UserRoleMap.getUserRoleStatus(),
-			// response.jsonPath().getString("userRoleStatus"));
-			// assertEquals(BatchPayload.get, response.jsonPath().getString("programName"));
 
 			log.info("User updated successfully with status code " + response.getStatusCode());
 			log.info("User Respose body" + response.getBody().asString());
@@ -463,10 +421,7 @@ public class UserSD extends RestUtils {
 
 		UserPayload = UserBody.PostExtgPhnNumBody();
 		response = UserRequests.PostRequest(UserPayload);
-		// UserPayload.setUserId(response.path("userId"));
-		// AdminUser=response.path("userId");
 		System.out.println("UserID : " + response.path("userId"));
-		// System.out.println("AdminUserID : " + AdminUser);
 
 	}
 
@@ -484,7 +439,6 @@ public class UserSD extends RestUtils {
 
 		response = UserRequests.DeletAdminUserRequest();
 		System.out.println("Delete User by userId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info("Deleted User with userId ");
 
 	}
@@ -493,7 +447,6 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_DELETE_Request_to_delete_a_Staff_user() {
 		response = UserRequests.DeletStaffUserRequest();
 		System.out.println("Delete User by userId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info("Deleted User with userId ");
 
 	}
@@ -502,7 +455,6 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_DELETE_Request_to_delete_a_Student_user() {
 		response = UserRequests.DeletStuUserRequest();
 		System.out.println("Delete User by userId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info("Deleted User with userId ");
 	}
 
@@ -528,7 +480,6 @@ public class UserSD extends RestUtils {
 
 		response = BatchRequests.DeletRequest();
 		System.out.println("Delete Batch by batchId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info("Deleted Batch with batchId ");
 
 	}
@@ -552,10 +503,9 @@ public class UserSD extends RestUtils {
 
 	@When("User sends HTTPS DELETE Request to delete a Program")
 	public void user_sends_https_delete_request_to_delete_a_program() {
-		response = ProgramRequests.DeletRequest();
+		response = ProgramRequests.DeleteByProgrambyID();
 
 		System.out.println("Delete Batch by batchId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info("Deleted Program with programId ");
 	}
 
@@ -581,7 +531,6 @@ public class UserSD extends RestUtils {
 
 		response = UserRequests.GetUserByIdRequest();
 		System.out.println("View User by invalid userId : " + response);
-		// UserPayload.setUserId(response.path("userId"));
 		log.info(" View User by Invalid userId");
 
 	}
@@ -685,66 +634,6 @@ public class UserSD extends RestUtils {
 			log.info("Request failed");
 		}
 	}
-
-	/*
-	 * @When("User sends HTTPS POST Request for new User for Admin role  Staff and Student"
-	 * ) public void
-	 * user_sends_HTTPS_POST_Request_for_new_User_for_Admin_role_Staff_and_Student()
-	 * throws IOException {
-	 * 
-	 * UserPayload = UserBody.PostStudentBody(); response =
-	 * UserRequests.PostRequest(UserPayload); //
-	 * UserPayload.setUserId(response.path("userId"));
-	 * UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
-	 * UserPayload.setUserFirstName(response.path("userFirstName")); //
-	 * StudentUser=response.path("userId"); System.out.println("UserID : " +
-	 * response.path("userId")); // System.out.println("StudentUserID : " +
-	 * StudentUser);
-	 * 
-	 * }
-	 * 
-	 * @Then("User receives status code {int} with response body for creating an single User for multiple role"
-	 * ) public void
-	 * user_receives_status_code_with_response_body_for_creating_an_single_User_for_multiple_role(
-	 * Integer int1) {
-	 * 
-	 * response.then().log().all(); }
-	 */
-
-//	@When("User sends HTTPS POST Request to create new Program")
-//	public void user_sends_https_post_request_to_create_new_program() throws IOException {
-//
-//		ProgramPayload = ProgramBody.PostBody();
-//		response = ProgramRequests.PostRequest(ProgramPayload);
-//		ProgramPayload.setProgramId(response.path("programId"));
-//		log.info("All required details are send in the POST request and new Program is created ");
-//		// System.out.println("ProgramID : " + response.path("programId"));
-//	}
-
-//	@Then("User receives status code {int} with response body for creating a Program")
-//	public void user_receives_status_code_with_response_body_for_creating_a_program(Integer statusCode) {
-//
-//		response.then().log().all();
-//		System.out.println("ProgramPostRequest : " + response);
-//		log.info(" new Program is created msg will be displayed");
-//
-//		if (statusCode == 201) {
-//
-//			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(programPostjson)).log().all();
-//
-//			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
-//			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
-//			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
-//
-//			log.info("Program created successfully with status code " + response.getStatusCode());
-//			log.info("Program Respose body" + response.getBody().asString());
-//
-//		} else {
-//			log.info("Request failed");
-//			log.error("400 bad request");
-//		}
-//
-//	}
 
 	@When("User sends HTTPS POST Request to create new Batch")
 	public void user_sends_https_post_request_to_create_new_batch() throws IOException {

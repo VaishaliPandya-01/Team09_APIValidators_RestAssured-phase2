@@ -13,44 +13,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
-
-
-
-
 public class batchSD extends RestUtils{
-
-
-
-
-	//	//baseURL
-	//	@Given("User creates request for the LMS API endpoint")
-	//	public void user_creates_request_for_the_LMS_API_endpoint() {
-	//		String BaseURI = routes.getString("BaseUrl");
-	//		baseURI = BaseURI;
-	//		
-	//		log.info("===========user sends request with BaseURL===============");
-	//	}
-
-
-	//	//Createprogram200
-	//		@When("User sends HTTPS post request for program and request body with mandatory and additional fields")
-	//		public void user_sends_HTTPS_post_request_for_program_and_request_body_with_mandatory_and_additional_fields() throws IOException {
-	//			
-	//			ProgramPayload=ProgramBody.PostBody();
-	//			response = ProgramRequests.PostRequest(ProgramPayload);		
-	//			ProgramPayload.setProgramId(response.path("programId"));		
-	//			log.info("============All required details for program id creation sent=================  ");
-	//			
-	//		}
-
-	//		@Then("User receives {int} created status for program")
-	//		public void user_receives_created_status_for_program(Integer int1) {		
-	//			response.then().assertThat().log().all();
-	//			System.out.println("Progstatus==========="+response.then().extract().statusCode());
-	//			System.out.println("Progbody==========="+response.then().extract().body());		
-	//			log.info("==========Program Id created successfully==============  ");  
-	//		}
-
 
 	//CreateBatch200
 	@When("User sends HTTPS post request for batch and request body with mandatory and additional fields")
@@ -65,7 +28,7 @@ public class batchSD extends RestUtils{
 
 	@Then("User receives {int} created status for batch")
 	public void user_receives_created_status_for_batch(Integer statusCode) {	
-		
+
 		if (statusCode == 201) {
 
 			response.then().assertThat()
@@ -89,6 +52,7 @@ public class batchSD extends RestUtils{
 		log.info("=========Batch Id created successfully200============  ");  
 	}
 
+
 	//Create Batch with existing BatchName in  request body400
 	@When("User sends HTTPS Post Request with existing BatchName")
 	public void user_sends_HTTPS_Post_Request_with_existing_BatchName() throws IOException {
@@ -98,9 +62,10 @@ public class batchSD extends RestUtils{
 		log.info("=========Create Batch with Existng BatchName400============  ");
 	}
 
+
 	@Then("User receives {int} Bad Request Status with message")
 	public void user_receives_Bad_Request_Status_with_message(Integer statusCode) {
-		// response.then().assertThat().statusCode(statusCode).log().all();
+
 		if (statusCode == 400) {				
 
 			response.then().assertThat()
@@ -116,10 +81,11 @@ public class batchSD extends RestUtils{
 		log.info("=========Create Batch with Existng BatchName gives 400 Bad Request============  ");
 	}
 
+
 	//Create Batch with Empty Mandatory Fields400 					
 	@When("User sends HTTPS post request for batch and request body without mandatory and additional fields")
 	public void user_sends_HTTPS_post_request_for_batch_and_request_body_without_mandatory_and_additional_fields() throws IOException{
-		// Write code here that turns the phrase above into concrete actions
+
 		BatchPayload=BatchBody.PostBodyEmpty();	
 		response = BatchRequests.PostRequest(BatchPayload);			
 		//BatchPayload.setBatchId(response.path("batchId"));		
@@ -130,7 +96,7 @@ public class batchSD extends RestUtils{
 
 	@Then("User receives {int} Bad Request status for missing fields in batch module")
 	public void user_receives_Bad_Request_status_for_missing_fields_in_batch_module(Integer int1) {			    
-		//response.then().assertThat().statusCode(int1).log().all();	
+
 		if (int1 == 400) {				
 
 			response.then().assertThat()
@@ -169,7 +135,7 @@ public class batchSD extends RestUtils{
 	@Then("User receives {int} OK Status with response body for batchID")
 	public void user_receives_OK_Status_with_response_body_for_batchID(Integer statusCode) {
 
-		//response.then().assertThat().body(matchesJsonSchema(getbatchIDJson)).statusCode(200).log().all();
+
 		if (statusCode == 200) {				
 
 			response.then().assertThat().body(matchesJsonSchema(getbatchIDJson))
@@ -254,7 +220,6 @@ public class batchSD extends RestUtils{
 	@Then("User receives {int} OK Status with updated value in response body for batch")
 	public void user_receives_OK_Status_with_updated_value_in_response_body_for_batch(Integer statusCode) {
 
-		//response.then().assertThat().body(matchesJsonSchema(updatebatchIDJson)).statusCode(200).log().all();
 		if (statusCode == 200) {				
 
 			response.then().assertThat()
@@ -272,17 +237,10 @@ public class batchSD extends RestUtils{
 		log.info("============UpdatebyBatchID200=================");
 	}	
 
-//	//Delete batch200
-//	@When("User sends HTTPS delete Request for batch")
-//	public void user_sends_HTTPS_delete_Request_for_batch() {		
-//		response = BatchRequests.DeletRequest();	
-//
-//
-//	}
 
 	@Then("User receives {int} Ok status with message batchID deleted successfully")
 	public void user_receives_Ok_status_with_message_batchID_deleted_successfully(Integer int1) {
-		//response.then().assertThat().statusCode(int1).log().all();
+
 		if (int1 == 200) {				
 
 			response.then().assertThat()
@@ -301,16 +259,9 @@ public class batchSD extends RestUtils{
 
 	}
 
-
-//	//Delete Program200
-//	@When("User sends HTTPS delete Request for program")
-//	public void user_sends_HTTPS_delete_Request_for_program() {
-//		response = ProgramRequests.DeletRequest();
-//	}
-
 	@Then("User receives {int} Ok status for program with message programID deleted successfully")
 	public void user_receives_Ok_status_for_program_with_message_programID_deleted_successfully(Integer int1) {
-		//response.then().assertThat().statusCode(int1).log().all();
+
 		if (int1 == 200) {				
 
 			response.then().assertThat()
@@ -423,23 +374,5 @@ public class batchSD extends RestUtils{
 			log.info("Request failed");
 		}
 	}
-
-
-	//			@Then("User receives {int} Not Found Status with message and boolean success details")
-	//			public void user_receives_Not_Found_Status_with_message_and_boolean_success_details(Integer statusCode) {
-	//				if (statusCode == 404) {				
-	//
-	//					response.then().assertThat()
-	//					.statusCode(statusCode)
-	//					.log().all();	
-	//
-	//					log.info("Status code " + response.getStatusCode());
-	//					log.info("Validation message " + response.getBody().asString());
-	//
-	//				} else {
-	//					log.info("Request failed");
-	//				}
-	//		}
-
 
 }

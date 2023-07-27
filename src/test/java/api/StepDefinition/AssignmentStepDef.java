@@ -29,12 +29,6 @@ public class AssignmentStepDef extends RestUtils {
 	static String assignmentNm;	
 
 
-//	@Given("User creates  Request for the LMS API endpoint")
-//	public void user_creates_request_for_the_lms_api_endpoint() {
-//		String BaseURI = routes.getString("BaseUrl");
-//		baseURI = BaseURI;
-//		log.info("user sends request with BaseURL");
-//	}
 	//Get All Assignments
 	@When("User sends HTTP request")
 	public void user_sends_http_request() {
@@ -73,16 +67,6 @@ public class AssignmentStepDef extends RestUtils {
 
 	}
 
-//	//Create Program
-//	@When("User sends HTTPS Request and  request Body for Program  with mandatory ,additional fields")
-//	public void user_sends_https_request_and_request_body_for_program_with_mandatory_additional_fields() throws IOException {
-//
-//		ProgramPayload=ProgramBody.PostBody();
-//		response = ProgramRequests.PostRequest(ProgramPayload);		
-//		ProgramPayload.setProgramId(response.path("programId"));		
-//		log.info("All required details send  ");
-//
-//	}
 	// Create Batch
 	@When("User sends HTTPS Request and  request Body for Batch  with mandatory ,additional fields")
 	public void user_sends_https_request_and_request_body_for_batch_with_mandatory_additional_fields() throws IOException {
@@ -95,7 +79,7 @@ public class AssignmentStepDef extends RestUtils {
 	//Create User
 	@When("User sends HTTPS Request and  request Body for User  with mandatory ,additional fields")
 	public void user_sends_https_request_and_request_body_for_user_with_mandatory_additional_fields() throws IOException {
-		
+
 		UserPayload = UserBody.PostAdminBody();
 		response = UserRequests.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
@@ -143,34 +127,6 @@ public class AssignmentStepDef extends RestUtils {
 		log.info("All required details send  ");
 
 	}
-
-//
-//	@Then("Validate response code {int}")
-//	public void validate_response_code(Integer statusCode) {
-//
-//		//response.then().assertThat().body(matchesJsonSchema(postbatchJson)).statusCode(statusCode).log().all();
-//		if (statusCode == 201) {
-//
-//			response.then().assertThat()
-//			.statusCode(statusCode)
-//			.body(matchesJsonSchema(postAssignmentJson))
-//			.log().all();
-//
-//			assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
-//			assertEquals(BatchPayload.getBatchName(), response.jsonPath().getString("batchName"));
-//			assertEquals(BatchPayload.getBatchNoOfClasses(), response.jsonPath().getString("batchNoOfClasses"));
-//			assertEquals(BatchPayload.getBatchStatus(), response.jsonPath().getString("batchStatus"));
-//			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
-//
-//			log.info("Batch created successfully with status code " + response.getStatusCode()) ;
-//			log.info("Batch Respose body" +response.getBody().asString());		
-//
-//		} else {
-//			log.info("Request failed");
-//			log.error("400 bad Request");
-//		}
-//	}
-
 
 	//Create Assignment with missing mandatory Field
 	@When("User sends HTTPS Request and  request Body for Assignment  with missing mandatory field ,additional fields")
@@ -234,23 +190,6 @@ public class AssignmentStepDef extends RestUtils {
 	}
 
 
-	/*@Then("User receives 200 ok with updated value in response body")
-	public void User_receives_OK_with_updated_value_in_response_body(Integer statusCode) {
-
-		if (statusCode == 200) {				
-
-			response.then().assertThat()
-			.statusCode(statusCode)
-			.log().all();	
-
-			log.info("Get request with Status code " + response.getStatusCode());
-			log.info("Values " + response.getBody().asString());
-
-		} else {
-			log.info("Request failed");
-			log.error("Not Found: 404");
-		}
-	}*/
 	//Put -Update Assignment with missing field
 	@When("User sends HTTP Request for Put with valid Assignment ID with missing field")
 	public void user_sends_http_request_for_put_with_valid_assignment_id_with_missing_field() throws IOException {
@@ -261,16 +200,8 @@ public class AssignmentStepDef extends RestUtils {
 		response = AssignmentRequest.PutRequest(AssignmentPayload);
 		log.info("UPDATE  successful: 200");
 	}
-//
-//	//Delete Assignment
-//	@When("User sends HTTPS delete Request for assignment")
-//	public void user_sends_https_delete_request_for_assignment() {
-//
-//		AssignmentRequest.DeletRequest();
-//		log.info("DELETE Request successful: 200");
-//
-//	}
-	
+
+
 	//Delete Assignment2
 	@When("User sends HTTPS delete Request for assignment2")
 	public void user_sends_https_delete_request_for_assignment2() {
@@ -295,7 +226,7 @@ public class AssignmentStepDef extends RestUtils {
 	//Delete Program
 	@When("User sends HTTPS delete Request for Program")
 	public void user_sends_https_delete_request_for_program() {
-		ProgramRequests.DeletRequest();
+		ProgramRequests.DeleteByProgrambyID();
 		log.info("DELETE Request successful: 200");
 
 	}

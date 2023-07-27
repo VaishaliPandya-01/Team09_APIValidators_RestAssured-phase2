@@ -20,6 +20,7 @@ public class AssignmentSubmitRequest extends RestUtils{
 					contentType(ContentType.JSON).
 					body(payload).
 					when().post(routes.getString("AssignmentSubmit_Post_URL"));
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,7 +32,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get All Request
 	public static Response GetAllRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetAll_URL"));
+		try {
+
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetAll_URL"));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return response;
 	}
@@ -40,8 +49,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get Assignment Submitted by user ID Request
 	public static Response GetAssignmentByUserIDRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetByUserID_URL")+AssignmentSubmitPayload.getUserId());
+		try {
 
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetByUserID_URL")+AssignmentSubmitPayload.getUserId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 
@@ -49,7 +65,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get Assignment Submitted by batch ID Request
 	public static Response GetAssignmentByBatchIDRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetByBatchID_URL")+BatchPayload.getBatchId());
+		try {
+
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetByBatchID_URL")+BatchPayload.getBatchId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 
@@ -57,7 +81,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get Grade by Student ID Request
 	public static Response GetGradeByStudentIDRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetGradeStudentID_URL")+StudentUser);
+		try {
+
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetGradeStudentID_URL")+StudentUser);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return response;
 	}
@@ -66,8 +98,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get Grade By Assignment ID Request
 	public static Response GetGradeByAssignIDRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetGradeAssignID_URL")+AssignmentSubmitPayload.getAssignmentId());
+		try {
 
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetGradeAssignID_URL")+AssignmentSubmitPayload.getAssignmentId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 
@@ -75,8 +114,15 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Get Grade By Batch ID Request
 	public static Response GetGradeByBatchIDRequest() {
 
-		response = given().when().get(routes.getString("AssignmentSubmit_GetGradeBatchID_URL")+BatchPayload.getBatchId());
+		try {
 
+			response = given().
+					when().
+					get(routes.getString("AssignmentSubmit_GetGradeBatchID_URL")+BatchPayload.getBatchId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 
@@ -94,18 +140,17 @@ public class AssignmentSubmitRequest extends RestUtils{
 					when().put(routes.getString("AssignmentSubmit_PutResubmit_URL")+AssignmentSubmitPayload.getSubmissionId());
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return response;
 	}
 
-	
+
 	//Put Grade by submission ID Request
 	public static Response GradePutRequest(AssignmentSubmitPayload payload) {
 
 		try {
-			
+
 			response = given().
 					contentType(ContentType.JSON).
 					accept(ContentType.JSON).
@@ -113,7 +158,6 @@ public class AssignmentSubmitRequest extends RestUtils{
 					when().put(routes.getString("AssignmentSubmit_PutByGrade_URL")+AssignmentSubmitPayload.getSubmissionId());
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return response;
@@ -123,9 +167,14 @@ public class AssignmentSubmitRequest extends RestUtils{
 	//Delete Request
 	public static Response DeletRequest() {
 
-		response = when().
-				delete(routes.getString("AssignmentSubmit_Delete_URL")+AssignmentSubmitPayload.getSubmissionId());
+		try {
 
+			response = when().
+					delete(routes.getString("AssignmentSubmit_Delete_URL")+AssignmentSubmitPayload.getSubmissionId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 

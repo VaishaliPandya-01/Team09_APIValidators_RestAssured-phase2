@@ -73,7 +73,7 @@
 			<artifactId>allure-cucumber5-jvm</artifactId>
 			<version>2.19.0</version>
 		</dependency>
-
+		
 		<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber5-adapter -->
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
@@ -88,7 +88,7 @@
 			<artifactId>extentreports</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-
+		
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
