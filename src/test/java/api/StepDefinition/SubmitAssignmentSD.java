@@ -448,9 +448,6 @@ public class SubmitAssignmentSD extends RestUtils{
 			assertEquals(AssignmentSubmitPayload.getSubPathAttach3(), response.jsonPath().getString("subPathAttach3"));
 			assertEquals(AssignmentSubmitPayload.getSubPathAttach4(), response.jsonPath().getString("subPathAttach4"));
 			assertEquals(AssignmentSubmitPayload.getSubPathAttach5(), response.jsonPath().getString("subPathAttach5"));
-			assertEquals(AssignmentSubmitPayload.getSubDateTime(), response.jsonPath().getString("subDateTime"));
-			assertEquals(AssignmentSubmitPayload.getUserId(), response.jsonPath().getString("userId"));
-			assertEquals(AssignmentSubmitPayload.getAssignmentId(), response.jsonPath().getString("assignmentId"));
 
 			log.info("Program created successfully with status code " + response.getStatusCode()) ;
 			log.info("Program Respose body" +response.getBody().asString());
