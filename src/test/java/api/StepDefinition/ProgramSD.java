@@ -39,31 +39,31 @@ public class ProgramSD extends RestUtils{
 		
 	}
 
-	@Then("User receives {int} Created Status with response body for program")
-	public void user_receives_Created_Status_with_response_body_for_program(Integer statuscode) {
-		
-		
-		if (statuscode == 201) {
-
-			response.then().assertThat()
-			.statusCode(statuscode)
-			.body(matchesJsonSchema(programPostjson))
-			.log().all();
-
-			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
-			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
-			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
-
-			log.info("Program created successfully with status code " + response.getStatusCode()) ;
-			log.info("Program Respose body" +response.getBody().asString());
-
-
-		} else {
-			log.info("Request failed");
-			log.error("400 bad Request");
-		}
-		
-	}
+//	@Then("User receives {int} Created Status with response body for program")
+//	public void user_receives_Created_Status_with_response_body_for_program(Integer statuscode) {
+//		
+//		
+//		if (statuscode == 201) {
+//
+//			response.then().assertThat()
+//			.statusCode(statuscode)
+//			.body(matchesJsonSchema(programPostjson))
+//			.log().all();
+//
+//			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
+//			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
+//			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
+//
+//			log.info("Program created successfully with status code " + response.getStatusCode()) ;
+//			log.info("Program Respose body" +response.getBody().asString());
+//
+//
+//		} else {
+//			log.info("Request failed");
+//			log.error("400 bad Request");
+//		}
+//		
+//	}
 	
 	//User does Get request to retrieve all programs
 		@When("User sends HTTPS Request for Program to get all programs")
@@ -73,23 +73,23 @@ public class ProgramSD extends RestUtils{
 			log.info("****Get all programs****");
 		}
 		
-		@Then("User receives {int} OK Status with response body")
-		public void User_receives_OK_Status_with_response_body(Integer statusCode) {
-
-			if (statusCode == 200) {				
-
-				response.then().assertThat()
-				.statusCode(statusCode)
-				.log().all();	
-
-				log.info("Get request with Status code " + response.getStatusCode());
-				log.info("Values " + response.getBody().asString());
-
-			} else {
-				log.info("Request failed");
-				log.error("Not Found: 404");
-			}
-		}
+//		@Then("User receives {int} OK Status with response body")
+//		public void User_receives_OK_Status_with_response_body(Integer statusCode) {
+//
+//			if (statusCode == 200) {				
+//
+//				response.then().assertThat()
+//				.statusCode(statusCode)
+//				.log().all();	
+//
+//				log.info("Get request with Status code " + response.getStatusCode());
+//				log.info("Values " + response.getBody().asString());
+//
+//			} else {
+//				log.info("Request failed");
+//				log.error("Not Found: 404");
+//			}
+//		}
 	
 		
 	//User update program with valid programID

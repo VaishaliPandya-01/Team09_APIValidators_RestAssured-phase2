@@ -12,11 +12,8 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @CucumberOptions(features ={"src/test/resources/features"}, 
-
 glue = {"api.StepDefinition"}, 
-//master:src/test/java/TestRunner/TestRunner.java
 
-//master:src/test/java/TestRunner/TestRunner.java
 monochrome = true, 
 plugin = {"pretty",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",

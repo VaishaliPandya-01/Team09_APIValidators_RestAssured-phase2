@@ -20,6 +20,17 @@ public class BatchBody extends RestUtils{
 		return BatchPayload;
 	}	
 	
+	public static BatchPayload ExistingPostBody() throws IOException {
+		
+		BatchPayload.setBatchDescription(BatchPayload.getBatchDescription());
+		BatchPayload.setBatchName(BatchPayload.getBatchName());
+		BatchPayload.setBatchNoOfClasses(BatchPayload.getBatchNoOfClasses());
+		BatchPayload.setBatchStatus(BatchPayload.getBatchStatus());
+		BatchPayload.setProgramId(ProgramPayload.getProgramId());
+			
+		return BatchPayload;
+	}
+	
 	public static BatchPayload PostBodyEmpty() throws IOException {
 			
 			BatchPayload.setBatchDescription(xlutils.getCellData("batchpostdata", 2, 0));

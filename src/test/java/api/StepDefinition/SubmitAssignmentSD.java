@@ -24,25 +24,25 @@ import io.cucumber.java.en.When;
 public class SubmitAssignmentSD extends RestUtils{
 
 
-	//BaseURL
-	@Given("User creates request for the LMS API endpoint")
-	public void User_creates_request_for_the_LMS_API_endpoint() {
+//	//BaseURL
+//	@Given("User creates request for the LMS API endpoint")
+//	public void User_creates_request_for_the_LMS_API_endpoint() {
+//
+//		String BaseURI = routes.getString("BaseUrl");
+//		baseURI = BaseURI;
+//		log.info("***User sends request with BaseURL***");
+//	}
 
-		String BaseURI = routes.getString("BaseUrl");
-		baseURI = BaseURI;
-		log.info("***User sends request with BaseURL***");
-	}
 
-
-	//CreateNewProgram
-	@When("User sends HTTPS Request and  request Body for Program with mandatory ,additional fields")
-	public void user_sends_HTTPS_Request_and_request_Body_for_Program_with_mandatory_additional_fields() throws IOException {
-
-		ProgramPayload=ProgramBody.PostBody();
-		response = ProgramRequests.PostRequest(ProgramPayload);		
-		ProgramPayload.setProgramId(response.path("programId"));		
-		log.info("******Create Program****** ");
-	}
+//	//CreateNewProgram
+//	@When("User sends HTTPS Request and  request Body for Program with mandatory ,additional fields")
+//	public void user_sends_HTTPS_Request_and_request_Body_for_Program_with_mandatory_additional_fields() throws IOException {
+//
+//		ProgramPayload=ProgramBody.PostBody();
+//		response = ProgramRequests.PostRequest(ProgramPayload);		
+//		ProgramPayload.setProgramId(response.path("programId"));		
+//		log.info("******Create Program****** ");
+//	}
 
 
 	//CreateNewBatch
@@ -60,7 +60,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS Request and request Body for Admin User with mandatory ,additional fields")
 	public void user_sends_HTTPS_Request_and_request_Body_for_Admin_User_with_mandatory_additional_fields() throws IOException {
 
-		UserPayload = UserBody.AdminPostBody();
+		UserPayload = UserBody.PostAdminBody();
 		response = UserRequest.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
 		log.info("******Created Admin User******");
@@ -71,7 +71,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS Request and request Body for Student User with mandatory ,additional fields")
 	public void user_sends_HTTPS_Request_and_request_Body_for_Student_User_with_mandatory_additional_fields() throws IOException {
 
-		UserPayload = UserBody.StudentPostBody();
+		UserPayload = UserBody.PostStudentBody();
 		response = UserRequest.PostRequest(UserPayload);
 		StudentUser=response.path("userId");
 		log.info("******Created Student User******");
@@ -85,6 +85,8 @@ public class SubmitAssignmentSD extends RestUtils{
 		AssignmentPayload = AssignmentBody.PostBody();
 		response = AssignmentRequest.PostRequest(AssignmentPayload);
 		AssignmentPayload.setAssignmentId(response.path("assignmentId"));
+		System.out.println("my data ====================>" +AssignmentPayload.getAssignmentId());
+		System.out.println("url====================> "+baseURI+routes.getString("Assignment_Post_URL"));
 		log.info("******Created Assignment******");
 	}
 
@@ -600,7 +602,7 @@ public class SubmitAssignmentSD extends RestUtils{
 			.statusCode(statusCode)
 			.log().all();
 
-			log.info("Program created successfully with status code " + response.getStatusCode()) ;
+			log.info("Assignment created successfully with status code " + response.getStatusCode()) ;
 			log.info("Respose body" +response.getBody().asString());
 
 

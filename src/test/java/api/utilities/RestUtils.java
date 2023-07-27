@@ -24,13 +24,7 @@ public class RestUtils {
 	public static XLUtils xlutils=new XLUtils(path.getString("Xlpath"));
 	
 	public static File programPutjson = xlutils.getJSONFile(path.getString("programPutSchemajson"));
-	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostSchemajson"));
-	
-	
-	public static File AssignSubmitPostjson = xlutils.getJSONFile(path.getString("AssignSubmitPostjson"));
-	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
-	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
-	
+	public static File programPostjson = xlutils.getJSONFile(path.getString("programPostSchemajson"));	
 	
 	public static File postbatchJson = xlutils.getJSONFile(path.getString("postbatchJson"));			
 	public static File getbatchbynameJson = xlutils.getJSONFile(path.getString("getbatchbynameJson"));
@@ -44,6 +38,13 @@ public class RestUtils {
 	public static File postUserjson= xlutils.getJSONFile(path.getString("postUserjson"));
 	public static File putUserByIdjson= xlutils.getJSONFile(path.getString("putUserByIdjson"));
 	public static File putUserStatusRolejson= xlutils.getJSONFile(path.getString("putUserStatusRolejson"));
+	
+	public static File postAssignmentJson = xlutils.getJSONFile(path.getString("postAssignmentJson"));	
+	public static File GetByIdJson = xlutils.getJSONFile(path.getString("GetByIdJson"));
+	
+	public static File AssignSubmitPostjson = xlutils.getJSONFile(path.getString("AssignSubmitPostjson"));
+	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
+	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
 	
 	public static Logger log = LogManager.getLogger();
 	

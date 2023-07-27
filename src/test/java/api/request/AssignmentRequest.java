@@ -40,20 +40,16 @@ public class AssignmentRequest extends RestUtils{
 
 		try {
 
-			PrintStream logs = new PrintStream(new FileOutputStream("Loggs/AssignmentPutLog.txt"));
 			response = given().
 					contentType(ContentType.JSON).
 					accept(ContentType.JSON).
 					body(payload).
-					filter(RequestLoggingFilter.logRequestTo(logs)).
-					filter(ResponseLoggingFilter.logResponseTo(logs)).
 					when().put(routes.getString("Assignment_Put_URL")+AssignmentPayload.getAssignmentId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return response;
 	}
-
 
 
 	//Delete Request
@@ -64,5 +60,30 @@ public class AssignmentRequest extends RestUtils{
 
 		return response;
 	}
+
+	// Get by AssignmentId
+	public static Response GetRequest() {
+		response = when().
+				get( routes.getString("Assignment_GetAllAssignments_URL")+AssignmentPayload.getAssignmentId());
+		return response;
+
+	}	
+	
+	
+	//Get assignment for Batch
+	public static Response GetRequestBatch() {
+		response = when().
+				get( routes.getString("Assignment_GetAssignmentforBatch_URL")+BatchPayload.getBatchId());
+		return response;
+	}
+	
+	
+	// Get By BatchId with no assignment
+	public static Response GetRequestBatch1() {
+		response = when().
+				get( routes.getString("Assignment_GetAssignmentforBatch_URL")+6580);
+		return response;
+	}
+
 
 }

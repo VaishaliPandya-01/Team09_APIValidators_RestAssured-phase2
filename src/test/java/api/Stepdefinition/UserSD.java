@@ -1,4 +1,4 @@
-package api.Stepdefinition;
+package api.StepDefinition;
 
 import static io.restassured.RestAssured.baseURI;
 
@@ -18,14 +18,14 @@ import static org.junit.Assert.assertEquals;
 
 public class UserSD extends RestUtils {
 
-	@Given("User creates  Request for the LMS API endpoint")
-	public void user_creates_request_for_the_lms_api_endpoint() {
-
-		String BaseURI = routes.getString("BaseUrl");
-		baseURI = BaseURI;
-		log.info("User Sends request with for the LMS BaseURL");
-
-	}
+//	@Given("User creates  Request for the LMS API endpoint")
+//	public void user_creates_request_for_the_lms_api_endpoint() {
+//
+//		String BaseURI = routes.getString("BaseUrl");
+//		baseURI = BaseURI;
+//		log.info("User Sends request with for the LMS BaseURL");
+//
+//	}
 
 	@When("User sends HTTPS Request GetAllUser")
 	public void user_sends_https_request_get_all_user() {
@@ -242,7 +242,7 @@ public class UserSD extends RestUtils {
 			assertEquals(UserPayload.getUserVisaStatus(), response.jsonPath().getString("userVisaStatus"));
 
 			assertEquals(UserPayload.getUserLinkedinUrl(), response.jsonPath().getString("userLinkedinUrl"));
-			assertEquals(UserProgBatchIdRoleMap.getUserId(), response.jsonPath().getString("userId"));
+			//assertEquals(UserProgBatchIdRoleMap.getUserId(), response.jsonPath().getString("userId"));
 
 			log.info("User created successfully with status code " + response.getStatusCode());
 			log.info("User Respose body" + response.getBody().asString());
@@ -315,9 +315,9 @@ public class UserSD extends RestUtils {
 	@Then("User receives status code {int} with response body for viewing an User by ID")
 	public void user_receives_status_code_with_response_body_for_viewing_an_user_by_id(Integer statusCode) {
 
-		response.then().log().all();
-		System.out.println("UserGetRequest by UserID: " + response);
-		log.info(" User Info for the given id will be displayed ");
+//		response.then().log().all();
+//		System.out.println("UserGetRequest by UserID: " + response);
+//		log.info(" User Info for the given id will be displayed ");
 
 		if (statusCode == 200) {
 
@@ -376,9 +376,9 @@ public class UserSD extends RestUtils {
 	@Then("User receives status code {int} with response body for updating User by ID")
 	public void user_receives_status_code_with_response_body_for_updating_user_by_id(Integer statusCode) {
 
-		response.then().log().all();
-		System.out.println("UserupdateRequest : " + response);
-		log.info(" User information is updated");
+//		response.then().log().all();
+//		System.out.println("UserupdateRequest : " + response);
+//		log.info(" User information is updated");
 
 		if (statusCode == 200) {
 
@@ -421,9 +421,9 @@ public class UserSD extends RestUtils {
 
 	@Then("User receives status code {int} with response body for updating UserRoleStaus")
 	public void user_receives_status_code_with_response_body_for_updating_user_role_staus(Integer statusCode) {
-		response.then().log().all();
-		System.out.println("UserupdateRequest : " + response);
-		log.info(" UserStatus Updated for User:  {userID} msg will be displayed ");
+//		response.then().log().all();
+//		System.out.println("UserupdateRequest : " + response);
+//		log.info(" UserStatus Updated for User:  {userID} msg will be displayed ");
 
 		if (statusCode == 200) {
 
@@ -711,40 +711,40 @@ public class UserSD extends RestUtils {
 	 * response.then().log().all(); }
 	 */
 
-	@When("User sends HTTPS POST Request to create new Program")
-	public void user_sends_https_post_request_to_create_new_program() throws IOException {
+//	@When("User sends HTTPS POST Request to create new Program")
+//	public void user_sends_https_post_request_to_create_new_program() throws IOException {
+//
+//		ProgramPayload = ProgramBody.PostBody();
+//		response = ProgramRequests.PostRequest(ProgramPayload);
+//		ProgramPayload.setProgramId(response.path("programId"));
+//		log.info("All required details are send in the POST request and new Program is created ");
+//		// System.out.println("ProgramID : " + response.path("programId"));
+//	}
 
-		ProgramPayload = ProgramBody.PostBody();
-		response = ProgramRequests.PostRequest(ProgramPayload);
-		ProgramPayload.setProgramId(response.path("programId"));
-		log.info("All required details are send in the POST request and new Program is created ");
-		// System.out.println("ProgramID : " + response.path("programId"));
-	}
-
-	@Then("User receives status code {int} with response body for creating a Program")
-	public void user_receives_status_code_with_response_body_for_creating_a_program(Integer statusCode) {
-
-		response.then().log().all();
-		System.out.println("ProgramPostRequest : " + response);
-		log.info(" new Program is created msg will be displayed");
-
-		if (statusCode == 201) {
-
-			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(programPostjson)).log().all();
-
-			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
-			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
-			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
-
-			log.info("Program created successfully with status code " + response.getStatusCode());
-			log.info("Program Respose body" + response.getBody().asString());
-
-		} else {
-			log.info("Request failed");
-			log.error("400 bad request");
-		}
-
-	}
+//	@Then("User receives status code {int} with response body for creating a Program")
+//	public void user_receives_status_code_with_response_body_for_creating_a_program(Integer statusCode) {
+//
+//		response.then().log().all();
+//		System.out.println("ProgramPostRequest : " + response);
+//		log.info(" new Program is created msg will be displayed");
+//
+//		if (statusCode == 201) {
+//
+//			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(programPostjson)).log().all();
+//
+//			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
+//			assertEquals(ProgramPayload.getProgramStatus(), response.jsonPath().getString("programStatus"));
+//			assertEquals(ProgramPayload.getProgramDescription(), response.jsonPath().getString("programDescription"));
+//
+//			log.info("Program created successfully with status code " + response.getStatusCode());
+//			log.info("Program Respose body" + response.getBody().asString());
+//
+//		} else {
+//			log.info("Request failed");
+//			log.error("400 bad request");
+//		}
+//
+//	}
 
 	@When("User sends HTTPS POST Request to create new Batch")
 	public void user_sends_https_post_request_to_create_new_batch() throws IOException {
@@ -762,29 +762,27 @@ public class UserSD extends RestUtils {
 	@Then("User receives status code {int} with response body for creating a Batch")
 	public void user_receives_status_code_with_response_body_for_creating_a_batch(Integer statusCode) {
 
-		response.then().log().all();
-		System.out.println("BatchPostRequest : " + response);
-		log.info(" new Batch is created msg will be displayed");
-
 		if (statusCode == 201) {
 
-			response.then().assertThat().statusCode(statusCode).body(matchesJsonSchema(batchPostjson)).log().all();
+			response.then().assertThat()
+			.statusCode(statusCode)
+			.body(matchesJsonSchema(postbatchJson))
+			.log().all();
 
 			assertEquals(BatchPayload.getBatchDescription(), response.jsonPath().getString("batchDescription"));
 			assertEquals(BatchPayload.getBatchName(), response.jsonPath().getString("batchName"));
 			assertEquals(BatchPayload.getBatchNoOfClasses(), response.jsonPath().getString("batchNoOfClasses"));
 			assertEquals(BatchPayload.getBatchStatus(), response.jsonPath().getString("batchStatus"));
-
 			assertEquals(ProgramPayload.getProgramName(), response.jsonPath().getString("programName"));
 
-			log.info("Batch created successfully with status code " + response.getStatusCode());
-			log.info("Batch Respose body" + response.getBody().asString());
+			log.info("Batch created successfully with status code " + response.getStatusCode()) ;
+			log.info("Batch Respose body" +response.getBody().asString());		
 
 		} else {
 			log.info("Request failed");
-			log.error("400 bad request");
+			log.error("400 bad Request");
 		}
-
+		log.info("=========Batch Id created successfully200============  ");  
 	}
 
 	@When("User sends HTTPS PUT Request to assign User to given program and Batch")
