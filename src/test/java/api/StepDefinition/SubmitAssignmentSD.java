@@ -10,7 +10,7 @@ import api.request.AssignmentRequest;
 import api.request.AssignmentSubmitRequest;
 import api.request.BatchRequests;
 import api.request.ProgramRequests;
-import api.request.UserRequest;
+import api.request.UserRequests;
 import api.requestbody.AssignmentBody;
 import api.requestbody.AssignmentSubmitBody;
 import api.requestbody.BatchBody;
@@ -61,7 +61,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void user_sends_HTTPS_Request_and_request_Body_for_Admin_User_with_mandatory_additional_fields() throws IOException {
 
 		UserPayload = UserBody.PostAdminBody();
-		response = UserRequest.PostRequest(UserPayload);
+		response = UserRequests.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
 		log.info("******Created Admin User******");
 	}
@@ -72,7 +72,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void user_sends_HTTPS_Request_and_request_Body_for_Student_User_with_mandatory_additional_fields() throws IOException {
 
 		UserPayload = UserBody.PostStudentBody();
-		response = UserRequest.PostRequest(UserPayload);
+		response = UserRequests.PostRequest(UserPayload);
 		StudentUser=response.path("userId");
 		log.info("******Created Student User******");
 	}
@@ -358,7 +358,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for student user")
 	public void User_sends_HTTPS_delete_Request_for_student_user() {
 
-		UserRequest.DeletStudentRequest();
+		UserRequests.DeletStuUserRequest();
 		log.info("******DELETE Request for Student User******");
 	}
 
@@ -366,7 +366,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for admin user")
 	public void User_sends_HTTPS_delete_Request_for_admin_user() {
 
-		UserRequest.DeletAdminRequest();
+		UserRequests.DeletAdminUserRequest();
 		log.info("******DELETE Request for Admin User******");
 	}
 

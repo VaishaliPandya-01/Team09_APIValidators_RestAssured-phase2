@@ -7,7 +7,7 @@ import java.io.IOException;
 import api.request.AssignmentRequest;
 import api.request.BatchRequests;
 import api.request.ProgramRequests;
-import api.request.UserRequest;
+import api.request.UserRequests;
 import api.requestbody.AssignmentBody;
 import api.requestbody.BatchBody;
 import api.requestbody.UserBody;
@@ -97,7 +97,7 @@ public class AssignmentStepDef extends RestUtils {
 	public void user_sends_https_request_and_request_body_for_user_with_mandatory_additional_fields() throws IOException {
 		
 		UserPayload = UserBody.PostAdminBody();
-		response = UserRequest.PostRequest(UserPayload);
+		response = UserRequests.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
 		log.info("All required details send  ");
 	}
@@ -283,7 +283,7 @@ public class AssignmentStepDef extends RestUtils {
 	//Delete User
 	@When("User sends HTTPS delete Request for User")
 	public void user_sends_https_delete_request_for_user() {
-		UserRequest.DeletAdminRequest();
+		UserRequests.DeletAdminUserRequest();
 		log.info("DELETE Request successful: 200");
 	}
 	//Delete Batch
