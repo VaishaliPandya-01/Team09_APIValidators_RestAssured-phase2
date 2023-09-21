@@ -8,9 +8,9 @@ import java.io.IOException;
 
 import api.request.AssignmentRequest;
 import api.request.AssignmentSubmitRequest;
-import api.request.BatchRequests;
-import api.request.ProgramRequests;
-import api.request.UserRequests;
+import api.request.BatchRequest;
+import api.request.ProgramRequest;
+import api.request.UserRequest;
 import api.requestbody.AssignmentBody;
 import api.requestbody.AssignmentSubmitBody;
 import api.requestbody.BatchBody;
@@ -27,7 +27,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void user_sends_HTTPS_Request_and_request_Body_for_Batch_with_mandatory_additional_fields() throws IOException {
 
 		BatchPayload = BatchBody.PostBody();
-		response = BatchRequests.PostRequest(BatchPayload);		
+		response = BatchRequest.PostRequest(BatchPayload);		
 		BatchPayload.setBatchId(response.path("batchId"));
 		log.info("******Create Batch******" );
 	}
@@ -38,7 +38,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void user_sends_HTTPS_Request_and_request_Body_for_Admin_User_with_mandatory_additional_fields() throws IOException {
 
 		UserPayload = UserBody.PostAdminBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
 		log.info("******Created Admin User******");
 	}
@@ -49,7 +49,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	public void user_sends_HTTPS_Request_and_request_Body_for_Student_User_with_mandatory_additional_fields() throws IOException {
 
 		UserPayload = UserBody.PostStudentBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		StudentUser=response.path("userId");
 		log.info("******Created Student User******");
 	}
@@ -335,7 +335,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for student user")
 	public void User_sends_HTTPS_delete_Request_for_student_user() {
 
-		UserRequests.DeletStuUserRequest();
+		UserRequest.DeletStuUserRequest();
 		log.info("******DELETE Request for Student User******");
 	}
 
@@ -343,7 +343,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for admin user")
 	public void User_sends_HTTPS_delete_Request_for_admin_user() {
 
-		UserRequests.DeletAdminUserRequest();
+		UserRequest.DeletAdminUserRequest();
 		log.info("******DELETE Request for Admin User******");
 	}
 
@@ -351,7 +351,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for batch")
 	public void User_sends_HTTPS_delete_Request_for_batch() {
 
-		BatchRequests.DeletRequest();
+		BatchRequest.DeletRequest();
 		log.info("****DELETE Request for Batch****");
 	}
 
@@ -359,7 +359,7 @@ public class SubmitAssignmentSD extends RestUtils{
 	@When("User sends HTTPS delete Request for program")
 	public void User_sends_HTTPS_delete_Request_for_program() {
 
-		ProgramRequests.DeletebyprogramName();
+		ProgramRequest.DeletebyprogramName();
 		log.info("****DELETE Request for Program****");
 	}
 

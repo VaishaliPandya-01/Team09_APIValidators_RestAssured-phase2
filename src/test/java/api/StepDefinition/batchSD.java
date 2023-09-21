@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 
-import api.request.BatchRequests;
+import api.request.BatchRequest;
 import api.requestbody.BatchBody;
 import api.utilities.RestUtils;
 import io.cucumber.java.en.Then;
@@ -19,7 +19,7 @@ public class batchSD extends RestUtils{
 	@When("User sends HTTPS post request for batch and request body with mandatory and additional fields")
 	public void user_sends_HTTPS_post_request_for_batch_and_request_body_with_mandatory_and_additional_fields() throws IOException{			
 		BatchPayload=BatchBody.PostBody();	
-		response = BatchRequests.PostRequest(BatchPayload);			
+		response = BatchRequest.PostRequest(BatchPayload);			
 		BatchPayload.setBatchId(response.path("batchId"));		
 		System.out.println(BatchPayload.getBatchId());
 		log.info("===========All required details for Batch id creation sent=====================  ");
@@ -58,7 +58,7 @@ public class batchSD extends RestUtils{
 	public void user_sends_HTTPS_Post_Request_with_existing_BatchName() throws IOException {
 
 		BatchPayload=BatchBody.ExistingPostBody();	
-		response = BatchRequests.PostRequest(BatchPayload);					
+		response = BatchRequest.PostRequest(BatchPayload);					
 		log.info("=========Create Batch with Existng BatchName400============  ");
 	}
 
@@ -87,7 +87,7 @@ public class batchSD extends RestUtils{
 	public void user_sends_HTTPS_post_request_for_batch_and_request_body_without_mandatory_and_additional_fields() throws IOException{
 
 		BatchPayload=BatchBody.PostBodyEmpty();	
-		response = BatchRequests.PostRequest(BatchPayload);			
+		response = BatchRequest.PostRequest(BatchPayload);			
 		//BatchPayload.setBatchId(response.path("batchId"));		
 		//System.out.println(BatchPayload.getBatchId());
 		log.info("======== Create Batch with Empty Mandatory Fields400 =========== ");  
@@ -116,7 +116,7 @@ public class batchSD extends RestUtils{
 	//Getallbatch200
 	@When("User creates GET Request for the LMS API endpoint")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint() {
-		response = BatchRequests.GetRequest();
+		response = BatchRequest.GetRequest();
 	}
 
 	@Then("User receives {int} status code with response body")
@@ -129,7 +129,7 @@ public class batchSD extends RestUtils{
 	//GetBatchByID200
 	@When("User creates GET Request for the LMS API endpoint with valid Batch ID")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint_with_valid_Batch_ID() {
-		response =  BatchRequests.GetBatchByIDRequest();
+		response =  BatchRequest.GetBatchByIDRequest();
 	}
 
 	@Then("User receives {int} OK Status with response body for batchID")
@@ -157,7 +157,7 @@ public class batchSD extends RestUtils{
 	@When("User creates GET Request for the LMS API endpoint with valid Batch Name")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint_with_valid_Batch_Name() {
 
-		response = BatchRequests.GetBatchByNameRequest();
+		response = BatchRequest.GetBatchByNameRequest();
 
 	}
 
@@ -186,7 +186,7 @@ public class batchSD extends RestUtils{
 	//GetBatchByProgramID200
 	@When("User creates Get Request for getting Batch by Valid ProgramID")
 	public void user_creates_Get_Request_for_getting_Batch_by_Valid_ProgramID() {
-		response = BatchRequests.GetBatchByProgIDRequest();
+		response = BatchRequest.GetBatchByProgIDRequest();
 	}
 
 	@Then("User receives {int} OK Status with response body for batch by programID")
@@ -212,7 +212,7 @@ public class batchSD extends RestUtils{
 	@When("User sends HTTPS Update Request and request Body with mandatory & additional  fields")
 	public void user_sends_HTTPS_Update_Request_and_request_Body_with_mandatory_additional_fields() throws IOException{		
 		BatchPayload.setBatchName(BatchPayload.getBatchName()+"-UPDATEDBATCH");
-		response= BatchRequests.UpdateBatchByIDRequest(BatchPayload);					
+		response= BatchRequest.UpdateBatchByIDRequest(BatchPayload);					
 		System.out.println("====UpdatedBatchName=============");
 
 	}
@@ -283,7 +283,7 @@ public class batchSD extends RestUtils{
 	@When("User creates GET Request for the LMS API endpoint with invalid Program Id")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint_with_invalid_Program_Id() throws IOException {
 		BatchPayload = BatchBody.GetBatchbyInvalidProgID();
-		response = BatchRequests.GetBatchByProgIDRequest();
+		response = BatchRequest.GetBatchByProgIDRequest();
 	}
 
 	@Then("User receives {int} Not Found Status with message and boolean success details for Invalid programID")
@@ -307,7 +307,7 @@ public class batchSD extends RestUtils{
 	@When("User creates GET Request for the LMS API endpoint with Invalid Batch ID")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint_with_Invalid_Batch_ID() throws IOException {
 		BatchPayload=BatchBody.PutBodyInvalidID();	 
-		response =  BatchRequests.GetBatchByIDRequest();
+		response =  BatchRequest.GetBatchByIDRequest();
 
 	}
 
@@ -333,7 +333,7 @@ public class batchSD extends RestUtils{
 	@When("User creates GET Request for the LMS API endpoint with invalid Batch name")
 	public void user_creates_GET_Request_for_the_LMS_API_endpoint_with_invalid_Batch_name() throws IOException {
 		BatchPayload = BatchBody.GetBatchbyInvalidBatchName();
-		response = BatchRequests.GetBatchByNameRequest();
+		response = BatchRequest.GetBatchByNameRequest();
 	}
 
 	@Then("User receives {int} Not Found Status with message and boolean success details for Invalid batchName")
@@ -356,7 +356,7 @@ public class batchSD extends RestUtils{
 	@When("User creates PUT Request for the LMS API endpoint  and  invalid batch ID")
 	public void user_creates_PUT_Request_for_the_LMS_API_endpoint_and_invalid_batch_ID() throws IOException {
 		BatchPayload = BatchBody.PutBodyInvalidID();
-		response = BatchRequests.UpdateBatchByIDRequest(BatchPayload);
+		response = BatchRequest.UpdateBatchByIDRequest(BatchPayload);
 	}
 
 	@Then("User receives {int} Not Found Status with message and boolean success details for UpdateByINvalidBatchID")

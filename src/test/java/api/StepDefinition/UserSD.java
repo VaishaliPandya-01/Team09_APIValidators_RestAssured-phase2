@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 
-import api.request.BatchRequests;
-import api.request.ProgramRequests;
-import api.request.UserRequests;
+import api.request.BatchRequest;
+import api.request.ProgramRequest;
+import api.request.UserRequest;
 import api.requestbody.BatchBody;
 import api.requestbody.UserBody;
 import api.utilities.RestUtils;
@@ -20,7 +20,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS Request GetAllUser")
 	public void user_sends_https_request_get_all_user() {
 
-		response = UserRequests.GetAllUserRequest();
+		response = UserRequest.GetAllUserRequest();
 		System.out.println("View All User : " + response);
 		log.info(" View all Users");
 
@@ -49,7 +49,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS GET Request to view user by Roles")
 	public void user_sends_https_get_request_to_view_user_by_roles() {
 
-		response = UserRequests.GetUserByRoleRequest();
+		response = UserRequest.GetUserByRoleRequest();
 		System.out.println("View User by Roles : " + response);
 		// UserPayload.setUserId(response.path("userId"));
 		log.info(" View User by Roles");
@@ -83,7 +83,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS GET Request to view all Staff")
 	public void user_sends_https_get_request_to_view_all_staff() {
 
-		response = UserRequests.GetAllStaffRequest();
+		response = UserRequest.GetAllStaffRequest();
 		System.out.println("View All Staff : " + response);
 		// UserPayload.setUserId(response.path("userId"));
 		log.info(" View all Staff");
@@ -114,7 +114,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_POST_Request_for_new_User_with_Missing_Mandatory_Fields() throws IOException {
 
 		UserPayload = UserBody.PostMissingFieldsBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		// UserPayload.setUserId(response.path("userId"));
 		// AdminUser=response.path("userId");
 		System.out.println("UserID : " + response.path("userId"));
@@ -147,7 +147,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_https_post_request_for_new_user_for_admin_role() throws IOException {
 
 		UserPayload = UserBody.PostAdminBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
@@ -196,7 +196,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_POST_Request_for_new_User_for_Staff_role() throws IOException {
 
 		UserPayload = UserBody.PostStaffBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
 		StaffUser = response.path("userId");
@@ -243,7 +243,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_POST_Request_for_new_User_for_Student_role() throws IOException {
 
 		UserPayload = UserBody.PostStudentBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 		UserPayload.setUserFirstName(response.path("userFirstName"));
 		StudentUser = response.path("userId");
@@ -289,7 +289,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS GET Request to view user by userID")
 	public void user_sends_https_get_request_to_view_user_by_user_id() throws IOException {
 
-		response = UserRequests.GetUserByIdRequest();
+		response = UserRequest.GetUserByIdRequest();
 		System.out.println("View User by userId : " + response);
 		log.info(" View User by userId");
 	}
@@ -328,7 +328,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_PUT_Request_to_update_User_by_UserId_with_missingFields() throws IOException {
 
 		UserWithoutRole = UserBody.PutUserMissingFieldsBody();
-		response = UserRequests.PutUserByIdRequest(UserWithoutRole);
+		response = UserRequest.PutUserByIdRequest(UserWithoutRole);
 
 	}
 
@@ -343,7 +343,7 @@ public class UserSD extends RestUtils {
 
 		System.out.println(AdminUser);
 		UserWithoutRole = UserBody.PutUserBody();
-		response = UserRequests.PutUserByIdRequest(UserWithoutRole);
+		response = UserRequest.PutUserByIdRequest(UserWithoutRole);
 
 		System.out.println("TimeZone : " + response.path("userTimeZone"));
 
@@ -381,7 +381,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_https_put_request_to_update_user_role_status_by_user_id() throws IOException {
 
 		UserRoleMap = UserBody.PutUserRoleStatusBody();
-		response = UserRequests.PutUserByRoleRequest(UserRoleMap);
+		response = UserRequest.PutUserByRoleRequest(UserRoleMap);
 
 		System.out.println("Update User Role Status: " + response.body());
 
@@ -420,7 +420,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_POST_Request_for_new_User_with_Existing_PhoneNumber() throws IOException {
 
 		UserPayload = UserBody.PostExtgPhnNumBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		System.out.println("UserID : " + response.path("userId"));
 
 	}
@@ -437,7 +437,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS DELETE Request to delete a user")
 	public void user_sends_https_delete_request_to_delete_a_user() {
 
-		response = UserRequests.DeletAdminUserRequest();
+		response = UserRequest.DeletAdminUserRequest();
 		System.out.println("Delete User by userId : " + response);
 		log.info("Deleted User with userId ");
 
@@ -445,7 +445,7 @@ public class UserSD extends RestUtils {
 
 	@When("User sends HTTPS DELETE Request to delete a Staff user")
 	public void user_sends_HTTPS_DELETE_Request_to_delete_a_Staff_user() {
-		response = UserRequests.DeletStaffUserRequest();
+		response = UserRequest.DeletStaffUserRequest();
 		System.out.println("Delete User by userId : " + response);
 		log.info("Deleted User with userId ");
 
@@ -453,7 +453,7 @@ public class UserSD extends RestUtils {
 
 	@When("User sends HTTPS DELETE Request to delete a Student user")
 	public void user_sends_HTTPS_DELETE_Request_to_delete_a_Student_user() {
-		response = UserRequests.DeletStuUserRequest();
+		response = UserRequest.DeletStuUserRequest();
 		System.out.println("Delete User by userId : " + response);
 		log.info("Deleted User with userId ");
 	}
@@ -478,7 +478,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS DELETE Request to delete a Batch")
 	public void user_sends_https_delete_request_to_delete_a_batch() {
 
-		response = BatchRequests.DeletRequest();
+		response = BatchRequest.DeletRequest();
 		System.out.println("Delete Batch by batchId : " + response);
 		log.info("Deleted Batch with batchId ");
 
@@ -503,7 +503,7 @@ public class UserSD extends RestUtils {
 
 	@When("User sends HTTPS DELETE Request to delete a Program")
 	public void user_sends_https_delete_request_to_delete_a_program() {
-		response = ProgramRequests.DeleteByProgrambyID();
+		response = ProgramRequest.DeleteByProgrambyID();
 
 		System.out.println("Delete Batch by batchId : " + response);
 		log.info("Deleted Program with programId ");
@@ -529,7 +529,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS GET Request to view user by invalid userID")
 	public void user_sends_HTTPS_GET_Request_to_view_user_by_invalid_userID() {
 
-		response = UserRequests.GetUserByIdRequest();
+		response = UserRequest.GetUserByIdRequest();
 		System.out.println("View User by invalid userId : " + response);
 		log.info(" View User by Invalid userId");
 
@@ -556,7 +556,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_PUT_Request_to_update_User_by_Invalid_userId() throws IOException {
 
 		UserWithoutRole = UserBody.PutUserBody();
-		response = UserRequests.PutUserByIdRequest(UserWithoutRole);
+		response = UserRequest.PutUserByIdRequest(UserWithoutRole);
 		System.out.println("update User by Invalid userId: " + response.path("userTimeZone"));
 
 	}
@@ -587,7 +587,7 @@ public class UserSD extends RestUtils {
 		System.out.println("UserupdateRequest : " + UserRoleMap.getRoleId());
 
 		UserProgBatchIdRoleMap = UserBody.AssignUserToProgBatchMsngFieldBody();
-		response = UserRequests.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
+		response = UserRequest.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
 
 	}
 
@@ -612,7 +612,7 @@ public class UserSD extends RestUtils {
 	@When("User sends HTTPS DELETE Request to delete a user with Invalid User Id")
 	public void user_sends_HTTPS_DELETE_Request_to_delete_a_user_with_Invalid_User_Id() {
 
-		response = UserRequests.DeletAdminUserRequest();
+		response = UserRequest.DeletAdminUserRequest();
 		System.out.println("Delete User by userId : " + response);
 
 		log.info("Deleted User with userId ");
@@ -639,7 +639,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_https_post_request_to_create_new_batch() throws IOException {
 
 		BatchPayload = BatchBody.PostBody();
-		response = BatchRequests.PostRequest(BatchPayload);
+		response = BatchRequest.PostRequest(BatchPayload);
 		BatchPayload.setBatchId(response.path("batchId"));
 		UserPayload.setUserPhoneNumber(response.path("userPhoneNumber").toString());
 
@@ -682,7 +682,7 @@ public class UserSD extends RestUtils {
 		System.out.println("UserupdateRequest : " + UserRoleMap.getRoleId());
 
 		UserProgBatchIdRoleMap = UserBody.AssignUserToProgBatchBody();
-		response = UserRequests.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
+		response = UserRequest.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
 
 	}
 
@@ -700,7 +700,7 @@ public class UserSD extends RestUtils {
 			throws IOException {
 
 		UserRoleMap = UserBody.PutUserRoleStatusMissingStatsBody();
-		response = UserRequests.PutUserByRoleRequest(UserRoleMap);
+		response = UserRequest.PutUserByRoleRequest(UserRoleMap);
 
 		System.out.println("Update User Role Status: " + response.body());
 
@@ -710,7 +710,7 @@ public class UserSD extends RestUtils {
 	public void user_sends_HTTPS_PUT_Request_to_update_User_role_status_by_different_Role_ID() throws IOException {
 
 		UserRoleMap = UserBody.PutUserRoleStatusDifferentRoleIdBody();
-		response = UserRequests.PutUserByRoleRequest(UserRoleMap);
+		response = UserRequest.PutUserByRoleRequest(UserRoleMap);
 
 		System.out.println("Update User Role Status: " + response.body());
 
@@ -721,7 +721,7 @@ public class UserSD extends RestUtils {
 			throws IOException {
 
 		UserProgBatchIdRoleMap = UserBody.AssignUserToProgBatchInvalidBody();
-		response = UserRequests.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
+		response = UserRequest.PutUserToProgBatchRequest(UserProgBatchIdRoleMap);
 
 	}
 

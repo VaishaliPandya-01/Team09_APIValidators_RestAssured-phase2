@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.baseURI;
 
 import java.io.IOException;
 
-import api.request.ProgramRequests;
+import api.request.ProgramRequest;
 import api.requestbody.ProgramBody;
 import api.utilities.RestUtils;
 import io.cucumber.java.en.Given;
@@ -30,11 +30,8 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request and  request Body for Program with mandatory ,additional fields")
 	public void user_sends_HTTPS_Request_and_request_Body_for_Program_with_mandatory_additional_fields() throws IOException {
 
-
-		ProgramPayload = ProgramBody.PostBody();
-		response = ProgramRequests.PostRequest(ProgramPayload);
+		ProgramRequest.PostRequest(ProgramBody.PostBody());	
 		ProgramPayload.setProgramId(response.path("programId"));
-
 		log.info("****New program is created with non-existing fields****");
 
 	}
@@ -43,7 +40,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request for Program to get all programs")
 	public void user_sends_HTTPS_Request_for_Program_to_get_all_programs() {
 
-		response = ProgramRequests.GetAllProgramRequest();
+		ProgramRequest.GetAllProgramRequest();
 		log.info("****Get all programs****");
 	}
 
@@ -52,8 +49,7 @@ public class ProgramSD extends RestUtils{
 	public void user_sends_HTTPS_Request_with_mandatory_and_additional_fields_for_Program_with_valid_program_ID() throws IOException {
 
 
-		ProgramPayload = ProgramBody.UpdateBodywithValidID();
-		response = ProgramRequests.UpdateByProgramID(ProgramPayload);
+		ProgramRequest.UpdateByProgramID(ProgramBody.UpdateBodywithValidID());		
 		log.info("****Update program with Valid ProgramID****");
 	}
 
@@ -86,7 +82,7 @@ public class ProgramSD extends RestUtils{
 	public void user_sends_HTTPS_Request_for_Program_with_valid_program_ID() {
 
 
-		response = ProgramRequests.GetByProgramID();
+		ProgramRequest.GetByProgramID();
 		log.info("****Get program with valid Program ID****");
 
 
@@ -99,7 +95,7 @@ public class ProgramSD extends RestUtils{
 
 		System.out.println("Program ID is "+ProgramPayload.getProgramId()); 
 
-		response = ProgramRequests.DeletebyprogramName();
+		ProgramRequest.DeletebyprogramName();
 		log.info("****Delete program with valid Program ID****");
 
 	}
@@ -126,8 +122,8 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request to delete Program with invalid program ID")
 	public void user_sends_HTTPS_Request_to_delete_Program_with_invalid_program_ID() {
 
-		System.out.println("ProgramID is "+ProgramPayload.getProgramId());
-		response = ProgramRequests.DeleteByProgrambyID();
+
+		ProgramRequest.DeleteByProgrambyID();
 		log.info("****Delete program with Invalid Program ID****");
 
 	}
@@ -153,8 +149,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request with mandatory and additional fields for Program with valid program name")
 	public void user_sends_HTTPS_Request_with_mandatory_and_additional_fields_for_Program_with_valid_program_name() throws IOException {
 
-		ProgramPayload = ProgramBody.UpdateBodywithValidProgramName();
-		response = ProgramRequests.UpdateByProgramName(ProgramPayload);
+		ProgramRequest.UpdateByProgramName(ProgramBody.UpdateBodywithValidProgramName());
 		log.info("****Update program with valid Program Name****");
 	}
 
@@ -163,8 +158,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request and  request Body for Program with existing values in program name.")
 	public void user_sends_HTTPS_Request_and_request_Body_for_Program_with_existing_values_in_program_name() throws IOException {
 
-		ProgramPayload = ProgramBody.PostBodywithExistingFields();
-		response = ProgramRequests.PostRequest(ProgramPayload);
+		ProgramRequest.PostRequest(ProgramBody.PostBodywithExistingFields());
 		log.info("****Create program with existing values****");
 	}
 
@@ -190,9 +184,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request and  request Body for program with missing mandatory fields.")
 	public void user_sends_HTTPS_Request_and_request_Body_for_program_with_missing_mandatory_fields() throws IOException {
 
-		ProgramPayload = ProgramBody.PostBodywithMissingFields();
-		response = ProgramRequests.PostRequest(ProgramPayload);
-		//ProgramPayload.setProgramId(response.path("programId"));
+		ProgramRequest.PostRequest(ProgramBody.PostBodywithMissingFields());
 		log.info("****Create program with Missing Mandatory Fields****");
 
 	}
@@ -202,8 +194,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request for Program with missing mandatory fields")
 	public void user_sends_HTTPS_Request_for_Program_with_missing_mandatory_fields() throws IOException {
 
-		ProgramPayload = ProgramBody.UpdateBodywithValidIDandMissingField();
-		response = ProgramRequests.UpdateByProgramID(ProgramPayload);
+		ProgramRequest.UpdateByProgramID(ProgramBody.UpdateBodywithValidIDandMissingField());
 		log.info("****Update program by Valid ID with Missing Mandatory Fields****");
 
 
@@ -213,8 +204,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request for Program with valid Program name and missing mandatory fields")
 	public void user_sends_HTTPS_Request_for_Program_with_valid_Program_name_and_missing_mandatory_fields() throws IOException {
 
-		ProgramPayload = ProgramBody.UpdateBodywithProgramNameandMissingField();
-		response = ProgramRequests.UpdateByProgramName(ProgramPayload);
+		ProgramRequest.UpdateByProgramName(ProgramBody.UpdateBodywithProgramNameandMissingField());
 		log.info("****Update program by Valid ProgramName with Missing Mandatory Fields****");
 	}
 
@@ -223,8 +213,8 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request for Program with invalid program ID")
 	public void user_sends_HTTPS_Request_for_Program_with_invalid_program_ID() {
 
-		System.out.println("Program ID is "+ProgramPayload.getProgramId());
-		response = ProgramRequests.GetByProgramID();
+
+		ProgramRequest.GetByProgramID();
 		log.info("****Get program with InValid Program ID****");
 
 	}
@@ -250,10 +240,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request with mandatory and additional fields for Program with invalid program ID")
 	public void user_sends_HTTPS_Request_with_mandatory_and_additional_fields_for_Program_with_invalid_program_ID() throws IOException {
 
-		System.out.println("Program ID is "+ProgramPayload.getProgramId());
-
-		ProgramPayload = ProgramBody.UpdateBodywithInvalidID();
-		response = ProgramRequests.UpdateByProgramID(ProgramPayload);
+		ProgramRequest.UpdateByProgramID(ProgramBody.UpdateBodywithInvalidID());
 		log.info("****Update program with InValid ID****");
 	}
 
@@ -263,8 +250,7 @@ public class ProgramSD extends RestUtils{
 	public void user_sends_HTTPS_Request_with_mandatory_and_additional_fields_for_Program_with_invalid_program_Name() throws IOException {
 		System.out.println("Program ID is "+ProgramPayload.getProgramName()); 
 
-		ProgramPayload = ProgramBody.UpdateBodywithInvalidProgramName();
-		response = ProgramRequests.UpdateByProgramName(ProgramPayload);
+		ProgramRequest.UpdateByProgramName(ProgramBody.UpdateBodywithInvalidProgramName());
 		log.info("****Update program with InValid Program Name****");
 	}
 
@@ -272,7 +258,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request to delete Program with valid program name")
 	public void user_sends_HTTPS_Request_to_delete_Program_with_valid_program_name() {
 
-		ProgramRequests.DeletebyprogramName();
+		ProgramRequest.DeletebyprogramName();
 		log.info("****Delete program with Valid Program Name****");
 	}
 
@@ -281,7 +267,7 @@ public class ProgramSD extends RestUtils{
 	@When("User sends HTTPS Request to delete Program with invalid program name")
 	public void user_sends_HTTPS_Request_to_delete_Program_with_invalid_program_name() {
 
-		response = ProgramRequests.DeletebyprogramName();
+		ProgramRequest.DeletebyprogramName();
 		log.info("****Delete program with InValid Program Name****");
 	}
 

@@ -18,8 +18,8 @@ monochrome = true,
 plugin = {"pretty",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		"io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
-		"html:target/cucmberreport",
-		"html:target/JUNITHtmlReports/report.html",
+		"html:target/Cucumber.html",
+		"json:target/cucumber.json",
 		"junit:target/JUNITReports/reports.xml"})
 
 public class TestRunner {

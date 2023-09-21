@@ -4,30 +4,19 @@ import static io.restassured.RestAssured.when;
 
 import java.io.IOException;
 
-import api.request.AssignmentRequest;
-import api.request.BatchRequests;
-import api.request.ProgramRequests;
-import api.request.UserRequests;
 import api.requestbody.AssignmentBody;
 import api.requestbody.BatchBody;
 import api.requestbody.UserBody;
+import api.request.AssignmentRequest;
+import api.request.BatchRequest;
+import api.request.ProgramRequest;
+import api.request.UserRequest;
 import api.utilities.RestUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
 public class AssignmentStepDef extends RestUtils {
-	static String programName;
-	static Integer programID;
-	static Integer batchID;
-	static String batchNm;
-	static String batchDescrtn;
-	static Integer batchNoClass;
-	static String userId;
-	static int assignmentId1;
-	static int assignmentId;
-	static String assignmentNm;	
-
 
 	//Get All Assignments
 	@When("User sends HTTP request")
@@ -72,7 +61,7 @@ public class AssignmentStepDef extends RestUtils {
 	public void user_sends_https_request_and_request_body_for_batch_with_mandatory_additional_fields() throws IOException {
 
 		BatchPayload = BatchBody.PostBody();
-		response = BatchRequests.PostRequest(BatchPayload);		
+		response = BatchRequest.PostRequest(BatchPayload);		
 		BatchPayload.setBatchId(response.path("batchId"));
 		log.info("All required details send for batch  " );
 	}
@@ -81,7 +70,7 @@ public class AssignmentStepDef extends RestUtils {
 	public void user_sends_https_request_and_request_body_for_user_with_mandatory_additional_fields() throws IOException {
 
 		UserPayload = UserBody.PostAdminBody();
-		response = UserRequests.PostRequest(UserPayload);
+		response = UserRequest.PostRequest(UserPayload);
 		AdminUser=response.path("userId");
 		log.info("All required details send  ");
 	}
@@ -214,19 +203,19 @@ public class AssignmentStepDef extends RestUtils {
 	//Delete User
 	@When("User sends HTTPS delete Request for User")
 	public void user_sends_https_delete_request_for_user() {
-		UserRequests.DeletAdminUserRequest();
+		UserRequest.DeletAdminUserRequest();
 		log.info("DELETE Request successful: 200");
 	}
 	//Delete Batch
 	@When("User sends HTTPS delete Request for Batch")
 	public void user_sends_https_delete_request_for_batch() {
-		BatchRequests.DeletRequest();
+		BatchRequest.DeletRequest();
 		log.info("DELETE Request successful: 200");
 	}
 	//Delete Program
 	@When("User sends HTTPS delete Request for Program")
 	public void user_sends_https_delete_request_for_program() {
-		ProgramRequests.DeleteByProgrambyID();
+		ProgramRequest.DeleteByProgrambyID();
 		log.info("DELETE Request successful: 200");
 
 	}

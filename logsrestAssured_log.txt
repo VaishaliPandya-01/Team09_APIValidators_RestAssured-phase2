@@ -1,0 +1,111 @@
+Request method:	POST
+Request URI:	https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/saveprogram
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "programName": "Jul23-APIValidators-SDET-130",
+    "programDescription": "Learn API",
+    "programStatus": "Active",
+    "programId": null
+}
+HTTP/1.1 201 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 25 Aug 2023 12:45:46 GMT
+Via: 1.1 vegur
+
+{
+    "programId": 20233,
+    "programName": "Jul23-APIValidators-SDET-130",
+    "programDescription": "Learn API",
+    "programStatus": "Active",
+    "creationTime": "2023-08-25T12:45:46.462+00:00",
+    "lastModTime": "2023-08-25T12:45:46.462+00:00"
+}
+Request method:	POST
+Request URI:	https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/batches
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "batchDescription": "SDET",
+    "batchId": null,
+    "batchName": "Jul23-APIValidators-SDET-130SDET-664",
+    "batchNoOfClasses": "2",
+    "batchStatus": "Active",
+    "programId": 20233
+}
+HTTP/1.1 201 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 25 Aug 2023 12:45:47 GMT
+Via: 1.1 vegur
+
+{
+    "batchId": 10469,
+    "batchName": "Jul23-APIValidators-SDET-130SDET-664",
+    "batchDescription": "SDET",
+    "batchStatus": "Active",
+    "batchNoOfClasses": 2,
+    "programId": 20233,
+    "programName": "Jul23-APIValidators-SDET-130"
+}
+Request method:	DELETE
+Request URI:	https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/batches/10469
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 50
+Date: Fri, 25 Aug 2023 12:45:47 GMT
+Via: 1.1 vegur
+
+Message: Batch with Id-10469 deleted Successfully!
+Request method:	DELETE
+Request URI:	https://lms-api-hackathon-june2023-930a8b0f895d.herokuapp.com/lms/deletebyprogname/Jul23-APIValidators-SDET-130
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Server: Cowboy
+Connection: keep-alive
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 76
+Date: Fri, 25 Aug 2023 12:45:47 GMT
+Via: 1.1 vegur
+
+Message: Program Name -Jul23-APIValidators-SDET-130 is deleted Successfully!

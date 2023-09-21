@@ -1,19 +1,23 @@
 package api.utilities;
 
 
+import java.io.File;
 import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.io.File;
-import api.payload.*;
+
 import api.payload.AssignmentPayload;
 import api.payload.AssignmentSubmitPayload;
 import api.payload.BatchPayload;
 import api.payload.ProgramPayload;
 import api.payload.UserPayload;
+import api.payload.UserProgBatchIdRoleMap;
 import api.payload.UserRoleMap;
+import api.payload.UserWithoutRole;
+import api.payload.userRoleProgramBatches;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class RestUtils {
 
@@ -52,7 +56,6 @@ public class RestUtils {
 	public static File AssignSubmitUserIDjson = xlutils.getJSONFile(path.getString("AssignSubUserIDjson"));
 	public static File AssignSubmitgradeIDjson = xlutils.getJSONFile(path.getString("AssignSubGradeIDjson"));
 
-
 	//payload objects
 	public static ProgramPayload ProgramPayload = new ProgramPayload();
 	public static BatchPayload BatchPayload = new BatchPayload();
@@ -65,6 +68,7 @@ public class RestUtils {
 	public static AssignmentSubmitPayload AssignmentSubmitPayload = new AssignmentSubmitPayload();
 
 
+	public static RequestSpecification request;
 	public static Response response;
 	public static String AdminUser;
 	public static String StudentUser;	
