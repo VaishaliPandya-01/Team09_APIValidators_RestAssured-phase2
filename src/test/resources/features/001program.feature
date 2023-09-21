@@ -100,4 +100,4 @@ Feature: Program Feature
   Scenario: User able to delete a program with invalid programName and mandatory request body
     Given User creates request for the LMS API endpoint
     When User sends HTTPS Request to delete Program with invalid program name
-    #Then User receives 404 Status code with response body
+    Then User receives 404 Status code with response body
