@@ -46,14 +46,64 @@ public class AssignmentRequest extends RestUtils{
 		return response;
 	}
 
-
-
 	//Delete Request
 	public static Response DeletRequest() {
 
-		response = when().
-				delete(routes.getString("Assignment_Delete_URL")+AssignmentPayload.getAssignmentId());
+		try {
 
+			response = when().
+					delete(routes.getString("Assignment_Delete_URL")+AssignmentPayload.getAssignmentId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return response;
+	}
+
+	// Get by AssignmentId
+	public static Response GetRequest() {
+
+		try {
+
+			response = when().
+					get( routes.getString("Assignment_GetAllAssignments_URL")+AssignmentPayload.getAssignmentId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return response;
+
+	}	
+
+
+	//Get assignment for Batch
+	public static Response GetRequestBatch() {
+
+		try {
+
+			response = when().
+					get( routes.getString("Assignment_GetAssignmentforBatch_URL")+BatchPayload.getBatchId());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return response;
+	}
+
+
+	// Get By BatchId with no assignment
+	public static Response GetRequestBatch1() {
+
+		try {
+
+			response = when().
+					get( routes.getString("Assignment_GetAssignmentforBatch_URL")+6580);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return response;
 	}
 

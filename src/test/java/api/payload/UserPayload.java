@@ -19,8 +19,6 @@ public class UserPayload {
     private String userId;
     
     
-    
-
 	public String getUserId() {
 		return userId;
 	}
@@ -99,7 +97,4 @@ public class UserPayload {
 	public void setUserVisaStatus(String userVisaStatus) {
 		this.userVisaStatus = userVisaStatus;
 	}
-    
-    
-
 }

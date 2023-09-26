@@ -11,15 +11,15 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 
-@CucumberOptions(features ={"src/test/resources/features"}, 
+@CucumberOptions(features ={"src/test/resources/features/"}, 
 glue = {"api.StepDefinition"}, 
 
 monochrome = true, 
 plugin = {"pretty",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		"io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
-		"html:target/cucmberreport",
-		"html:target/JUNITHtmlReports/report.html",
+		"html:target/Cucumber.html",
+		"json:target/cucumber.json",
 		"junit:target/JUNITReports/reports.xml"})
 
 public class TestRunner {

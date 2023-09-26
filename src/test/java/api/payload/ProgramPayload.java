@@ -1,12 +1,11 @@
 package api.payload;
 
 public class ProgramPayload {
-	
+
 	private String programName;
 	private String programDescription;
 	private String programStatus;
 	private Integer programId;
-	
 
 	public Integer getProgramId() {
 		return programId;
@@ -32,6 +31,4 @@ public class ProgramPayload {
 	public void setProgramStatus(String programStatus) {
 		this.programStatus = programStatus;
 	}
-	
-
 }

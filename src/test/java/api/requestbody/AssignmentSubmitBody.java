@@ -96,66 +96,62 @@ public class AssignmentSubmitBody extends RestUtils{
 
 		return AssignmentSubmitPayload;
 	}
-	
+
 	//ReSubmit Assignment by Submission ID
-		public static AssignmentSubmitPayload ResubmitPutBody() throws IOException {			
+	public static AssignmentSubmitPayload ResubmitPutBody() throws IOException {			
 
-			AssignmentSubmitPayload.setAssignmentId(AssignmentPayload.getAssignmentId());
-			AssignmentSubmitPayload.setUserId(StudentUser);
-			AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 1, 0));
-			AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 1, 1));
-			AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 1, 2));
-			AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 1, 3));
-			AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 1, 4));
-			AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 1, 5));
-			AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 1, 6));
-			AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 1, 7));//07-20-2023 18:07:30
-
-
-			return AssignmentSubmitPayload;
-		}
-
-		//ReSubmit Assignment by Submission ID without mandatory fields
-		public static AssignmentSubmitPayload ResubmitWithoutManFieldsPutBody() throws IOException {			
-
-			AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 3, 0));
-			AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 3, 1));
-			AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 3, 2));
-			AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 3, 3));
-			AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 3, 4));
-			AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 3, 5));
-			AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 3, 6));
-			AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 3, 7));//07-20-2023 18:07:30
+		AssignmentSubmitPayload.setAssignmentId(AssignmentPayload.getAssignmentId());
+		AssignmentSubmitPayload.setUserId(StudentUser);
+		AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 1, 0));
+		AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 1, 1));
+		AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 1, 2));
+		AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 1, 3));
+		AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 1, 4));
+		AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 1, 5));
+		AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 1, 6));
+		AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 1, 7));//07-20-2023 18:07:30
 
 
-			return AssignmentSubmitPayload;
-		}
-		
-		//Grade by Submission ID
-		public static AssignmentSubmitPayload GradePutBody() throws IOException {			
+		return AssignmentSubmitPayload;
+	}
 
-			AssignmentSubmitPayload.setGradedBy(AdminUser);
-			AssignmentSubmitPayload.setGrade(xlutils.getCellData("AssignSubmitputdata", 2, 8));
+	//ReSubmit Assignment by Submission ID without mandatory fields
+	public static AssignmentSubmitPayload ResubmitWithoutManFieldsPutBody() throws IOException {			
 
-			return AssignmentSubmitPayload;
-		}
-		
-		//Grade by Submission ID without mandatory fields
-		public static AssignmentSubmitPayload GradePutBodyWithoutMandFields() throws IOException {			
-
-			AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 3, 0));
-			AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 3, 1));
-			AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 3, 2));
-			AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 3, 3));
-			AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 3, 4));
-			AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 3, 5));
-			AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 3, 6));
-			AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 3, 7));
-
-			return AssignmentSubmitPayload;
-		}
+		AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 3, 0));
+		AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 3, 1));
+		AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 3, 2));
+		AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 3, 3));
+		AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 3, 4));
+		AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 3, 5));
+		AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 3, 6));
+		AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 3, 7));//07-20-2023 18:07:30
 
 
+		return AssignmentSubmitPayload;
+	}
 
+	//Grade by Submission ID
+	public static AssignmentSubmitPayload GradePutBody() throws IOException {			
 
+		AssignmentSubmitPayload.setGradedBy(AdminUser);
+		AssignmentSubmitPayload.setGrade(xlutils.getCellData("AssignSubmitputdata", 2, 8));
+
+		return AssignmentSubmitPayload;
+	}
+
+	//Grade by Submission ID without mandatory fields
+	public static AssignmentSubmitPayload GradePutBodyWithoutMandFields() throws IOException {			
+
+		AssignmentSubmitPayload.setSubDesc(xlutils.getCellData("AssignSubmitputdata", 3, 0));
+		AssignmentSubmitPayload.setSubComments(xlutils.getCellData("AssignSubmitputdata", 3, 1));
+		AssignmentSubmitPayload.setSubPathAttach1(xlutils.getCellData("AssignSubmitputdata", 3, 2));
+		AssignmentSubmitPayload.setSubPathAttach2(xlutils.getCellData("AssignSubmitputdata", 3, 3));
+		AssignmentSubmitPayload.setSubPathAttach3(xlutils.getCellData("AssignSubmitputdata", 3, 4));
+		AssignmentSubmitPayload.setSubPathAttach4(xlutils.getCellData("AssignSubmitputdata", 3, 5));
+		AssignmentSubmitPayload.setSubPathAttach5(xlutils.getCellData("AssignSubmitputdata", 3, 6));
+		AssignmentSubmitPayload.setSubDateTime(xlutils.getCellData("AssignSubmitputdata", 3, 7));
+
+		return AssignmentSubmitPayload;
+	}
 }
